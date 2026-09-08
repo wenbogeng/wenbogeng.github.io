@@ -1,0 +1,22 @@
+{
+  "name": "interview-review-desk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "2.1.10",
+    "vite": "5.4.11",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "@types/estree": "1.0.8"
+  }
+}
