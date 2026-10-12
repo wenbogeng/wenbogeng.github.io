@@ -58,3 +58,18 @@ npm run dev
 ```
 
 复习状态、收藏和上次阅读位置会保存在当前浏览器中。
+
+## GitHub Pages 部署
+
+网站地址是 `https://wenbogeng.github.io/`，GitHub 仓库地址仅用于查看源码。
+
+这是 Vite / React 项目，仓库根目录的 `index.html` 是开发入口，不能直接作为 GitHub Pages 的发布内容。浏览器无法直接运行其中引用的 JSX，需要先构建。
+
+1. 将 `.github/workflows/pages.yml` 和项目源码提交并推送到 `main`。
+2. 在仓库的 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**。
+3. 在 **Actions → Deploy to GitHub Pages** 查看运行结果；需要时选择 **Run workflow** 手动触发。
+4. 构建部署成功后访问网站。若仍看到旧页面，强制刷新并检查 Actions 的部署结果。
+
+工作流运行 `npm ci`、`npm run build` 和现有托管测试，仅发布 `dist/client` 中编译后的静态页面和资源。Sites 托管仍使用原有的 `dist/server` 与 `dist/.openai` 支持文件。
+
+可通过 `npm run build` 后运行 `npm run preview` 验证生产版本。

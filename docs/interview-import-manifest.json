@@ -1,0 +1,4200 @@
+{
+  "sourceRoot": "Interview",
+  "importDate": "2026-10-11",
+  "sources": [
+    {
+      "file": "4套测试题_改-240219/C++_改.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "cpp-test-source"
+      ]
+    },
+    {
+      "file": "4套测试题_改-240219/python_改.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "python-test-source"
+      ]
+    },
+    {
+      "file": "4套测试题_改-240219/transformers题目.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "transformers-test-source"
+      ]
+    },
+    {
+      "file": "4套测试题_改-240219/深度学习30题_改.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "deep-learning-test-source"
+      ]
+    },
+    {
+      "file": "AntelopeTechnology_ProjectTest.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "antelope-risk-control-assignment"
+      ]
+    },
+    {
+      "file": "Books/ByteByteGo_LinkedIn_PDF.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Books/DDIA.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Books/剑指offer_第二版.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Books/程序员面试金典（第6版）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Books/算法图解.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Books/算法竞赛入门经典（第2版） -刘汝佳.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "Cisco OA­.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "cisco-coding-oa"
+      ]
+    },
+    {
+      "file": "MEXC/MEXC实习生笔试.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "mexc-finance-intern-written"
+      ]
+    },
+    {
+      "file": "MEXC/mexc_intern_OA.ipynb",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "mexc-finance-intern-written"
+      ]
+    },
+    {
+      "file": "MEXC/笔试优秀答案.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "mexc-finance-intern-written"
+      ]
+    },
+    {
+      "file": "RNC_笔试_Wenbo/.vscode/c_cpp_properties.json",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/.vscode/launch.json",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/.vscode/settings.json",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/.vscode/tasks.json",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/Ctp_Project.vcxproj",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/Ctp_Project.vcxproj.filters",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/Ctp_Project.vcxproj.user",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/LHXT_1.0.0.zip",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/MarketData/DialogRsp.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/MarketData/QueryRsp.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/MarketData/TradingDay.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/RNC 笔试-耿文博.md",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "rnc-ctp-practical-written"
+      ]
+    },
+    {
+      "file": "RNC_笔试_Wenbo/SqlData/p2209_market_data.csv",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/TradingData/DialogRsp.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/TradingData/Private.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/TradingData/Public.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/TradingData/QueryRsp.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/TradingData/TradingDay.con",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/c++ 实践题(2).txt",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "rnc-ctp-practical-written"
+      ]
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/CTPService.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/CreateFile.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/CustomMdSpi.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/CustomTradeSpi.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/DataCollect.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/FileWriter.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/MarketService.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/RestfulService.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/ThostFtdcMdApi.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/ThostFtdcTraderApi.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/ThostFtdcUserApiDataType.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/include/ThostFtdcUserApiStruct.h",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/lib/WinDataCollect.dll",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/lib/WinDataCollect.lib",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/lib/thosttraderapi_se.dll",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/lib/thosttraderapi_se.lib",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/CTPService.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/CreateFile.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/CustomMdSpi.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/CustomTradeSpi.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/FileWriter.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/MarketService.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/RestfulService.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/src/main.cpp",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/v6.6.7_tradeapi.zip",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/CreateFile.obj",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.Build.CppClean.log",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.exe.recipe",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.log",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/CL.command.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/CL.read.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/CL.write.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/Ctp_Project.lastbuildstate",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/link.command.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/link.read.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.tlog/link.write.1.tlog",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/Ctp_Project.vcxproj.FileListAbsolute.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/CustomMdSpi.obj",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/CustomTradeSpi.obj",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/main.obj",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/vc142.idb",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "RNC_笔试_Wenbo/x64/Debug/vc142.pdb",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程实现、SDK、运行配置或行情数据；题面和实现说明已收录",
+      "records": []
+    },
+    {
+      "file": "Uber 4轮VO/MapSum.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "uber-vo-code-records"
+      ]
+    },
+    {
+      "file": "Uber 4轮VO/restoreIpAddresses.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "uber-vo-code-records"
+      ]
+    },
+    {
+      "file": "上海卓胜私募/卓胜私募.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "zhuosheng-cpp-written"
+      ]
+    },
+    {
+      "file": "中望龙腾C++/birdsFields.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "zhongwang-cpp-study-source"
+      ]
+    },
+    {
+      "file": "中望龙腾C++/getTreeNames.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "zhongwang-cpp-study-source"
+      ]
+    },
+    {
+      "file": "中望龙腾C++/maxSubArray.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "zhongwang-cpp-study-source"
+      ]
+    },
+    {
+      "file": "中望龙腾C++/中望 C++ 面试八股.md",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "zhongwang-cpp-study-source"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1839.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1840.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1841.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1842.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1843.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1844.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1845.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1846.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1847.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1848.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1849.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1850.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1851.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1861.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1862.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1863.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1864.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1865.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1866.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1867.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1868.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1869.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1870.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1871.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1872.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1873.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1876.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1877.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1878.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1879.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1880.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/IMG_1881.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/答案/WechatIMG129.jpg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/答案/WechatIMG180.jpg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "ubiquant-oa-photos"
+      ]
+    },
+    {
+      "file": "九坤笔试/答案/九坤填空 选择.pages",
+      "status": "待完整读取",
+      "reason": "Pages 窗口读取失败；不使用单页预览冒充完整文档",
+      "records": []
+    },
+    {
+      "file": "交叉科技/笔试-C++选择+算法和编程.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "cross-tech-cpp-written"
+      ]
+    },
+    {
+      "file": "交叉科技/笔试-C++选择+算法和编程.pages",
+      "status": "同内容 DOCX 已收录",
+      "reason": "优先读取同名 Word 文件，未重复创建场次",
+      "records": []
+    },
+    {
+      "file": "交叉科技/面试问卷.docx",
+      "status": "未导入",
+      "reason": "人事问卷或个人登记信息，不属于技术题面",
+      "records": []
+    },
+    {
+      "file": "交叉科技/面试问卷.pages",
+      "status": "同内容 DOCX 已收录",
+      "reason": "优先读取同名 Word 文件，未重复创建场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/00Nodejs的键盘输入.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/01 猜字谜.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/01知识点.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/02 木板.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/03 查找重复代码.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/03查找重复代码.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/04 查找单入口空闲区域.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/05 单词倒叙.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/05 单词倒叙.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/06 打印文件.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/06打印文件.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/07 对称字符串.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/08 分界线.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/09 关联端口组合并.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/10 货币单位换算.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/11 获得完美走位.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/12 简单的自动曝光.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/13 日志采集系统.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/14 数组的中心位置.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/15 通信误码.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/16 网上商城优惠活动.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/17 开心消消乐.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/18 获取最大软件版本号.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/19 寻找链表的中间结点.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/20 做小的调整次数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/21 字符串解密.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/22 投篮大赛.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/23 任务总执行时长.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/24 找数字.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/25 整理扑克牌.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/26 箱子之形摆放.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/27 异常的打卡记录.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/28 最左侧冗余覆盖子串.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/29 最多提取子串数目.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/30 找出通过车辆最多颜色.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/31 优秀学员统计.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/32 租车骑绿道.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/33 相同数字的积木游戏.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/34 工作安排.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/35 预定酒店.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/36 学校的位置.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/37 寻找密码.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/38 寻找关键钥匙.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/39 查找充电设备组合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/40 知识图谱新词挖掘.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/41 静态代码扫描服务.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/42 不爱施肥的小布.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/43 AI处理器组合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/44 新员工座位安排系统.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/45 光伏场地建设规划.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/46 微服务的集成测试.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/47 字符串重新排序.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/48 MVP争夺战.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/49 贪心的商人.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/基础/50 核酸检测人员安排.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/01 不含101的数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/02 取出尽量少的球.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/03 最多等和不相交连续子序列.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/04 Excel单元格数值统计.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/05 寻找符合要求的最长子串.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/06 分奖金.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/07 计算至少需要多少个快递主站点.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/08 基站维修工程师.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/09 数字加减游戏.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/10 最大数字.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/11 最差产品奖.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/12 去除多余空格.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/13 统计差异值大于相似值二元组个数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/14 最优资源分配.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/15 最少数量线段覆盖.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/16 区间连接器.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/17 机房布局.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/18 快递投放问题.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/19 优雅数组.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/20 组装新的数组.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/21 上班之路.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/22 区块链文件转储系统.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/23 快速开租建站.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/24 字母组合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/25 机器人活动区域.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/26 寻找相似单词.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/27 递增字符串.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/28 硬件产品销售方案.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/29 组合出合法最小数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/30 云短信平台优惠活动.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/31 统计匹配的二元组个数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/32 狼羊过河.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/33 计算网络信号.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/34 天然蓄水库.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/35 查找树中元素.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/36 红黑图.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/37 Linux发行版的数量.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/38 信号发射和接收.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/39 垃圾信息拦截.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "华为 OD练习题/进阶/40 简单的解压缩算法.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "又水投资笔试/一、数据爬虫任务.doc",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "youshui-fund-data-model-written"
+      ]
+    },
+    {
+      "file": "又水投资笔试/二、建模分析任务.docx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "youshui-fund-data-model-written"
+      ]
+    },
+    {
+      "file": "又水投资笔试/二建模任务补充资料/万得基金指数编制方案.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "建模任务的指数数据和编制参考资料；题目本身已收录",
+      "records": []
+    },
+    {
+      "file": "又水投资笔试/二建模任务补充资料/万得普通股票型基金指数.xlsx",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "建模任务的指数数据和编制参考资料；题目本身已收录",
+      "records": []
+    },
+    {
+      "file": "启林投资/OA/IMG_17BB8F86-A39A-4C3F-AF50-3A98FA8847C3.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4115.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4116.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4117.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4118.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4119.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4120.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4121.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4122.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4123.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4124.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4125.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4126.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4127.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4128.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4129.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4130.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4131.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4132.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4133.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4134.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4135.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4136.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/OA/IMG_4137.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/README.md",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/cache.py",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "启林投资/graph.py",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "qilin-oa-photos"
+      ]
+    },
+    {
+      "file": "善流投资/善流投资_笔试_耿文博.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "shanliu-cpp-written"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3987.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3988.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3989.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3990.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3991.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3992.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3993.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3994.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3995.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3996.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3997.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3998.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_3999.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4001.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4002.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4003.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4004.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4005.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4006.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4007.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4008.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4009.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4010.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4011.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4012.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4013.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4014.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4015.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4016.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4017.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4018.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4019.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4020.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4021.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4022.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4023.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4024.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4025.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4026.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4027.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4028.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4029.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4030.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4031.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4032.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4033.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4034.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4035.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4036.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4037.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4038.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4039.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4040.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4041.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4042.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4043.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4044.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4045.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4046.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4047.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4048.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4049.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4050.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4051.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "希格斯投资/OA/IMG_4052.JPG",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "higgs-oa-photos"
+      ]
+    },
+    {
+      "file": "武汉布奇科技 bridge investment partern/Interview Questions 20230712.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "bridge-investment-written-questions"
+      ]
+    },
+    {
+      "file": "燧石投资 笔试/2023 Week1选题.pdf",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "causis-strategy-week1-assignment"
+      ]
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/PKG-INFO",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/README.md",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/__init__.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/bond_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/common_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/const.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/future_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/high_frequency_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/index_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/option_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api/stock_data.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api.egg-info/PKG-INFO",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api.egg-info/SOURCES.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api.egg-info/dependency_links.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api.egg-info/requires.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/causis_api.egg-info/top_level.txt",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/setup.cfg",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1/setup.py",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/causis_api-0.3.1-basic.tar.gz",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/商品期货数据/total_data.pkl",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/商品期货数据/商品期货数据_日线_20220611.zip",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/20220110 期货量化交易入门 (持续更新）.docx",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA策略分类和配置方法论20211208.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/Back结构下商品期货的套利分析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/Contango结构下商品期货的套利分析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/FICC 系列研究之三——多品种期货策略中 的权重分配.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/FICC 系列研究之二——基于动量和期限结 构的商品期货策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东方证券-《衍生品系列研究之五》：商品期货套利策略实证-20170110.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货-商品多因子系列：行业板块与策略风格因子的探索-20180126.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货-商品期货中的阿尔法策略20170707.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货-商品期货跨品种套利实证-20180103.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货-国内商品期货常用日内CTA策略测试 20161014-.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货_专题报告_商品期货_商品期货合约展期优化问题探究-20210419.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货_专题报告_金融工程_股指期货展期价差与期限曲线的凸性的关系-20201230.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货_商品市场宏观风险因子模型初探-20171019.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货_商品组合的风险分析与风险管理-20171214.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/东证期货_库存因子在商品组合策略中的应用-20200506.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/中信建投量化专题 ∙ CTA系列二：趋势策略品种权重分配初探-20200715.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/中信建投量化专题 ∙ CTA系列四：基于历史波动率的品种权重分配策略-20200730.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/主要产业链涵盖的品种.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/光大证券-光大证券资产配置定量研究系列之八：资产配置组合管理中的动态回撤控制方法.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/关于商品期限结构的解读.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之一：顺势而为，趋势为王-20170105.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之七：量化基本面探索之基于宏观经济因素以及市场自身特点的沪深300 和创业板轮动策略-20180513.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之三：基于库存基本面视角的商品期货投资策略（上）-20171019.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之九：国债期货趋势策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之二：基于商品期货的期限结构的投资策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之五：商品量化基本面研究框架的探索之螺纹钢-20180107.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之六：商品量化基本面研究框架的探索之铁矿石-20180321.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-CTA策略系列报告之四：基于库存基本面视角的商品期货投资策略（下）-20171019.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/兴业证券-﻿CTA策略系列报告之八：量化基本面探索之周期行业和非周期行业的划分及其轮动策略-20181020.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华宝证券-金融工程专题报告：大宗商品CTA多因子模型构建及回测-20201112.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货 - Curve 因子与基差动量因子.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货 - 商品因子模型构建市场全息透视初代.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货 - 截面动量策略参数分组测试（一）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货 - 投研科技最新之AI技术初音_202103.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货 - 金融科技赋能投研系列之十一： 智AT科技 慧投未来（上）：pdf.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（一）：波动率因子-20170825.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（七）商品动量因子新升级-20180330.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（三）：期限结构因子-20171025.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（二）：动量因子-20170925.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（五）偏度与峰度因子.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（六）-商品成交持仓排名因子（上）-20180330.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-量化策略专题：CTA量化策略因子系列（四）：因子组合与择时-20171124.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰期货-金融科技赋能投研系列之十二：智AI科技 慧投未来（下）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/华泰证券-CTA组合策略助力资产配置：基于风险平价的CTA组合策略-20200720.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/商品期货的波动率研究_结合基本面特性.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/国信证券_基于回撤率仓位控制及指数择时.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（一）：量化CTA策略概述-20170213.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（七）：预期外宏观因子对商品期货价格的冲击影响研究-20190127.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（三）：策略的趋势过滤-20170321.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（九）：持仓龙虎榜中蕴藏的投资机会-20190628.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（二）：日间趋势策略初探-20170309.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（五）：我国商品期货分类及异质性基本面分析概述-20180131.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（八）：基于期限结构稳定性判断的展期收益策略详解-20190517.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（六）：基本面分析框架下的黑色系商品库存预测-20180209.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（十一）：信号来源与交易合约选择下的横截面策略改进-20200326.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（十）：基本面逻辑下的因子改进与策略组合（横截面篇）-20191226.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/天风证券-商品期货CTA专题报告（四）：库存基本面与动量技术面共振的投资策略-20180105.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/安信证券-安信金工黑科技原理揭秘之一：周期分析理论-20180415.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/安信证券-金融工程主题报告：黑科技系列之一：基于周期与背驰的趋势反转策略-20200303.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/民生证券-CTA策略巡礼：从趋势到套利-20170224.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-CTA多因子策略反思与改进方向——从2019年三季度大幅回撤说起-20190621 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之七-基于海内外期货持仓报告的CTA交易策略（上） .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之九-原油期货指南-20180326  .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之五-商品期货因子挖掘与组合构建再探究-20170818 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之八-CTA因子表现回顾及组合优化探究-20180202  .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之六-多品种趋势策略中的仓位管理方法- 20171102 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之十一-揭开逆周期因子的神秘面纱-20180912  .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之十三-CTA因子适用性分析及品种动态筛选策略-20190621.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之十二-2018年期货市场及CTA策略回顾-20190210 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之十五-2020年期货市场及CTA策略回归-20210118 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/海通金工-FICC系列研究之十四-黄金市场概况及多维度择时策略-20200406  .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之一：初识量化趋势交易体系-20170328.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之七：海龟交易系统测试-20170929.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之三：量化体系之化工板块子策略-20161229.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之九：成交量、持仓量、时间、空间在趋势策略中的应用-20180402.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之二：量化体系之农产品板块子策略20161229-.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之五：量化体系之组合测试-20170328.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之八：以道氏理论为基础的顺势、整理体系-20171229.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之十一：遗传算法在参数优化中的应用-20190628.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之十：VN.PY框架介绍及风险平价模型在CTA策略中的应用-20190210 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之十：商品期货展期收益策略初探-20180410 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券-金融工程CTA策略专题报告之四：量化体系之黑色板块子策略-20161230.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券金融工程CTA策略专题报告之六：日内交易策略与趋势体系完善.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/渤海证券金融工程专题报告：绝对收益中的仓位管理和择时方法.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/申万宏源-挖掘商品期货风险溢价因子-20191112  .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/CTA量化/银河金工FOF系列之七_FOF 风险管理与回撤控制.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/期货因子树状图.png",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/20131211-民生证券-CTA程序化交易实务研究之六：基于机器学习的订单簿高频交易策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/20140526-银河证券-CTA程序化交易实务研究之七：IF市场微观结构特征分析之“庖丁解牛”.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/20140815-银河证券-CTA程序化交易实务研究之八：期指Level2行情的价格发现研究及高频实战体会.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/SAR 策略在股指期货中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/基于 ACD法则和枢轴点的股指期货日内交易实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/基于小波消噪的股指期货日内交易实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/市场微观结构日内交易策略 (2).pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/市场微观结构日内交易策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/日内突破模式及其资金管理的多重比较研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/海通量化-“海量”专题（152）基于日内收益分布特征的股指期货交易策略-20200115.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/海通量化-短周期策略研究之五 - 周内效应与日内效应相结合的股指期货CTA策略-20200730.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/股指期货带来的获利机会之三.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/期货类/股指期货日内策略/股指期货日内分时段收益特征.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/20200505 从0到1：解码绝对收益策略 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20180106-方正证券-“星火”多因子系列报告（一）：Barra模型初探，A股市场风格解析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20180303-方正证券-“星火”多因子系列（二）：Barra模型进阶，多因子模型风险预测.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20181013-东北证券-金融工程研究报告：Barra模型（CNE6）介绍与应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20190214-财通证券-“星火”多因子专题报告（三）：Barra模型深化：纯因子组合构建.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20190226-西南证券-因子选股系列：BARRA中国市场模型（CNE6）解读.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20190620-渤海证券-多因子模型研究系列之九：Barra风险模型（CNE6）之纯因子构建与因子合成.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20190621-渤海证券-多因子模型研究系列之八：Barra风险模型（CNE6）之单因子检测.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20201103-中银证券-量化权益投资系列报告（二）：有关Barra中国权益CNE5模型的思考（上）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/20201110-中银证券-量化权益投资系列报告（三）：有关Barra中国权益CNE5模型的思考（下）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/Barra China Equity Model Descriptor details.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Barra/Barra China Equity Model.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20160225-银河证券-浅析Smart_Beta_ETF指数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20160323-广发证券-互联网大数据挖掘之七：基于大数据挖掘的Smart_Beta策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20160324-广发证券-产品创新专题报告系列之十二：Smart_Beta深度解析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20160331-广发证券-产品创新专题报告系列之十五：利用事件构筑Smart_Beta_ETF.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20160331-广发证券-产品创新专题报告系列之十四：基于主流风格追踪的Smart_Beta策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20170905-兴业证券-SmartBeta系列报告之一：他山之石.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/20171009-兴业证券-Smart_Beta_系列报告之二：方兴未艾.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/Smart Beta/海外及A股Smart Beta产品与策略分析PPTV3.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/20160406-方正证券-异动罗盘，寻一只特立独行的票：“特立独行”异动股票的事件研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/20160725-广发证券-多因子Alpha系列报告之二十八：基于因子及事件的智能替换策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/20170801-国泰君安-数量化专题之九十九：多维度挖掘公开市场回购中的超额收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/中信证券 “量化思维”主题培训会—事件驱动投资逻辑与策略体系.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/国泰君安-数量化专题之73：事件驱动策略的因子化特征.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/海通证券-金融工程专题报告：因子视角下的事件驱动策略收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/事件驱动/长江证券-事件研究框架：事件选股方法中的因子暴露与纯化事件收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20080926-东方证券-不同市场环境以及投资风格的-动量以及反转策略研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20200730 海通金工-选股因子系列研究（六十七）-短周期高频因子与组合调仓收益增强 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20200730 海通金工-选股因子系列研究（六十九）-高频因子的现实与幻想 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20200730 海通金工-选股因子系列研究（六十八）-基金重仓超配因子及其对指数增强组合的影响 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20200730 海通金工-选股因子系列研究（六十六）-寻找逐笔交易中的有效信息 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/20200816 海通金工-选股因子系列研究（七十）-日内市场微观结构与高频因子选股能力 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之10：Alpha因子库精简与优化.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之11：资金规模对策略收益的影响.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之12：线性高效简化版冲击成本模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之13：Alpha预测.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之14：非流动性的度量及其横截面溢价.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之15：东方机器选股模型Ver1.0.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之16：非对称价格冲击带来的超额收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之17：A股市场风险分析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之18：在Alpha衰退之前.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之19：动态情景Alpha模型再思考.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之1：多因子模型的基石－－单因子有效性检验.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之20：技术类新Alpha因子的批量测试.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之21：组合优化是与非.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之22：中美市场因子选股效果对比分析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之23：反转因子失效市场下的量化策略应对.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之24：细分行业建模之银行内因子研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之25：多因子模型在港股中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之2：低特质波动，高超额收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之3：投机、交易行为与股票收益（上）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之4：基于交易热度的指数增强.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之5：剔除行业、风格因素后的大类因子检验.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之6：用组合优化构建更精确多样的投资组合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之7：投机、交易行为与股票收益（下）.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之8：动态情景多因子Alpha模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-因子选股系列研究之9：日内残差高阶矩与股票收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-金工磨刀石系列之1：常用股票行业分类方法的比较.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/东方证券-金工磨刀石系列之2：选股因子数据的异常值处理和正态转换.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之10：因子正交与择时，基于分类模型的动态权重配置.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之11：爬罗剔抉，一致预期因子分类与精选.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之1：因子测试框架.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之2：因子测试全集.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之3：多因子组合“光大Alpha+1.0“.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之4：别开生面，公司治理因子详解.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之5：见微知著，成交量占比高频因子解析.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之7：基于K线最短路径构造的非流动性因子.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之8：高频因子，日内分时成交量蕴藏玄机.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/多因子/光大证券-多因子系列报告之9：一致交易因子，挖掘集体行为背后的收益.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/机器学习/华泰人工智能.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20121017-广发证券-短线择时策略研究之一：基于股指期货在A股非交易时间表现的短线择时研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20130617-广发证券-短线择时策略研究之二：希尔伯特变换下的短线择时策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20130726-广发证券-短线择时策略研究之三：低延迟趋势线与交易性择时.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20130902-广发证券-短线择时策略研究之四：相位指标在短线择时中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20140102-广发证券-交易性择时策略研究之五：从希尔伯特变换到波浪理论择时.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20140711-广发证券-交易性择时策略研究之六：探寻抛物线逼近下的创业板拐点.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20140828-广发证券-交易性择时策略研究之七：基于加权傅里叶变换的长期趋势预测.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20150520-广发证券-交易性择时策略研究之八：指数高阶矩择时策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20200816 海通量化-短周期策略研究之四 - 基于周内效应与市场状态的A股择时策略 .pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/20210125-财通证券-“逐鹿”Alpha专题报告（四）：基于南向资金的选股择时策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/华泰金工择时系列研究：华泰风险收益一致性择时模型(用beta择时).pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/国泰君安-数量化专题之七十一：基于微观市场结构的择时策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/国泰君安-数量化专题之七十五：基于奇异谱分析的均线择时研究.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/海通证券-选股因子系列研究（三十二）：因子择时在风险控制模型中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/股票择时/海通证券-量化研究新思维（一）：对选股因子择时.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/20170703-国泰君安-数量化专题之九十四：回撤控制下的最优化大类资产配置策略.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/华泰-周期三因子定价与资产配置模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/华泰-周期大类资产配置模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/华泰-基于投资时钟和BL模型的大类资产配置.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/华泰-风险平价模型实证研究：风险平价模型在大类资产配置及行业配置中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/西部证券-大类资产配置报告系列之1：从资产的历史数据到未来预期.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/西部证券-大类资产配置报告系列之2：多维度探究资产预期收益优化法.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/西部证券-大类资产配置报告系列之3：风险无处不在：资产波动率模型构建与预测.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/股票类/资产配置/西部证券-大类资产配置报告系列之4：黄金，把握战略机遇投资期.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/Investments 12th Edition Zvi Bodie.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/Trading Systems and Methods, + Website by Perry J. Kaufman, Wiley; 5 edition (January 29, 2013).pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之10：宏观周期指标应用于随机森林选股.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之11：人工智能选股之stacking集成学习.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之12：人工智能选股之特征选择.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之13：人工智能选股之损失函数的改进.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之14：对抗过拟合：从时序交叉验证谈起.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之15：人工智能选股之卷积神经网络.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之16：再论时序交叉验证对抗过拟合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之17：人工智能选股之数据标注方法实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之18：机器学习选股模型的调仓频率实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之19：偶然中的必然：重采样技术检验过拟合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之1：人工智能选股框架及经典算法简介.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之20：必然中的偶然：机器学习中的随机数.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之21：基于遗传规划的选股因子挖掘.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之22：基于CSCV框架的回测过拟合概率.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之23：再探基于遗传规划的选股因子挖掘.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之24：真假序列识别研究-投石问路：技术分析可靠否？.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之25——真假序列识别再探：市场弱有效性检验与择时战场选择.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之26：遗传规划在CTA信号挖掘中的应用.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之27：揭开机器学习模型的“黑箱”.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之28：基于量价的人工智能选股体系概览.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之29：提升超额收益 另类标签和集成学习.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之2：人工智能选股之广义线性模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之30：从关联到逻辑：因果推断初探.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之31：生成对抗网络GAN初探.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之32：AlphaNet：因子挖掘神经网络.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之33：数据模式探索：无监督学习案例.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之34：再探AlphaNet：结构和特征优化.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之35：WGAN应用于金融时间序列生成.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之36：相对生成对抗网络RGAN实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之37：舆情因子和BERT情感分类模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之38：WGAN生成：从单资产到多资产.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之39：周频量价选股模型的组合优化实证.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之3：人工智能选股之支持向量机模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之40：微软AI量化投资平台Qlib体验.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之41：基于BERT的分析师研报情感因子.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之4：人工智能选股之朴素贝叶斯模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之5：人工智能选股之随机森林模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之6：人工智能选股之Boosting模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之7：人工智能选股之Python实战.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之8：人工智能选股之全连接神经网络.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能/华泰证券-华泰人工智能系列之9：人工智能选股之循环神经网络模型.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰人工智能.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰证券-华泰人工智能系列之14：对抗过拟合：从时序交叉验证谈起.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰证券-华泰人工智能系列之16：再论时序交叉验证对抗过拟合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰证券-华泰人工智能系列之19：偶然中的必然：重采样技术检验过拟合.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/华泰证券-华泰人工智能系列之22：基于CSCV框架的回测过拟合概率.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/投资组合优化.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/期权、期货及其他衍生产品第9版中文版.pdf",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/期货基本面量化.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/策略代码优化.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/投研资料/通用类研报/策略转译.rar",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "书籍、练习题或投研参考资料，不认定为真实面试场次",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/股票行情及估值数据/stock_price_standard",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/股票行情及估值数据/stock_st_standard",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "燧石投资 笔试/股票行情及估值数据/stock_valuation_standard",
+      "status": "辅助资料，未作为独立面试场次导入",
+      "reason": "工程依赖、数据或其他配套文件",
+      "records": []
+    },
+    {
+      "file": "石峰投资/员工面试登记表V2.doc",
+      "status": "未导入",
+      "reason": "人事问卷或个人登记信息，不属于技术题面",
+      "records": []
+    },
+    {
+      "file": "石峰投资/面试问卷.pdf",
+      "status": "未导入",
+      "reason": "人事问卷或个人登记信息，不属于技术题面",
+      "records": []
+    },
+    {
+      "file": "祝音科技笔试/IMG_1789 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1789.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1790 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1790.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1791 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1791.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1792 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1792.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1793 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1793.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1794 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1794.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1795 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1795.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1796 2.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1796.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1797.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1798.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1799.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1800.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1801.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1802.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1803.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1804.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1805.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1811.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1812.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "祝音科技笔试/IMG_1813.jpeg",
+      "status": "已整理为文字题面；模糊缺失见转写清单",
+      "reason": "题目照片已整理为文字；重复、续页与缺失见 interview-photo-transcription.json",
+      "records": [
+        "zhuyin-oa-photos"
+      ]
+    },
+    {
+      "file": "稳博投资笔试/K2020217.ipynb",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "stablebro-technical-written-2023"
+      ]
+    },
+    {
+      "file": "稳博投资笔试/WenboFund_WG.ipynb",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "stablebro-technical-written-2023"
+      ]
+    },
+    {
+      "file": "稳博投资笔试/稳博技术组笔试题2023-1.pages",
+      "status": "待完整读取",
+      "reason": "Pages 窗口读取失败；不使用单页预览冒充完整文档",
+      "records": []
+    },
+    {
+      "file": "稳博投资笔试/稳博投资一面-凉经.md",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "stablebro-quant-trading-system-round1"
+      ]
+    },
+    {
+      "file": "蓝湖1面/Permeation.cpp",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "lanhu-round1-code-record"
+      ]
+    },
+    {
+      "file": "面经.xlsx",
+      "status": "已收录",
+      "reason": "正文、代码、原文附件或题目照片",
+      "records": [
+        "collected-interview-xls-row-2",
+        "collected-interview-xls-row-3",
+        "collected-interview-xls-row-4",
+        "collected-interview-xls-row-5",
+        "collected-interview-xls-row-6",
+        "collected-interview-xls-row-7",
+        "collected-interview-xls-row-8",
+        "collected-interview-xls-row-9",
+        "collected-interview-xls-row-10",
+        "collected-interview-xls-row-11",
+        "collected-interview-xls-row-12",
+        "collected-interview-xls-row-13",
+        "collected-interview-xls-row-14",
+        "collected-interview-xls-row-15",
+        "collected-interview-xls-row-16",
+        "collected-interview-xls-row-17",
+        "collected-interview-xls-row-18",
+        "collected-interview-xls-row-19",
+        "collected-interview-xls-row-20",
+        "collected-interview-xls-row-21",
+        "collected-interview-xls-row-22",
+        "collected-interview-xls-row-23",
+        "collected-interview-xls-row-24",
+        "collected-interview-xls-row-25",
+        "collected-interview-xls-row-26",
+        "collected-interview-xls-row-27",
+        "collected-interview-xls-row-28",
+        "collected-interview-xls-row-29",
+        "collected-interview-xls-row-30",
+        "collected-interview-xls-row-31",
+        "collected-interview-xls-row-32",
+        "collected-interview-xls-row-33",
+        "collected-interview-xls-row-34",
+        "collected-interview-xls-row-35",
+        "collected-interview-xls-row-36",
+        "collected-interview-xls-row-37",
+        "collected-interview-xls-row-38",
+        "collected-interview-xls-row-39",
+        "collected-interview-xls-row-40",
+        "collected-interview-xls-row-41",
+        "collected-interview-xls-row-42",
+        "collected-interview-xls-row-43",
+        "collected-interview-xls-row-44",
+        "collected-interview-xls-row-45",
+        "collected-interview-xls-row-46",
+        "collected-interview-xls-row-47",
+        "collected-interview-xls-row-48",
+        "collected-interview-xls-row-49",
+        "collected-interview-xls-row-50",
+        "collected-interview-xls-row-51",
+        "collected-interview-xls-row-52",
+        "collected-interview-xls-row-53",
+        "collected-interview-xls-row-54",
+        "collected-interview-xls-row-55",
+        "collected-interview-xls-row-56",
+        "collected-interview-xls-row-57",
+        "collected-interview-xls-row-58",
+        "collected-qr-study-source",
+        "collected-qt-study-source",
+        "collected-interview-process-notes",
+        "collected-interview-resource-links"
+      ]
+    }
+  ],
+  "remaining": [
+    {
+      "source": "面经.xlsx",
+      "content": "内嵌图片和 prop trading-coding OA 工作表",
+      "status": "待提取配图"
+    },
+    {
+      "source": "照片型 OA",
+      "content": "图片已收录；逐题文字、公式和选项尚未转写审校",
+      "status": "可读原图，待文字整理"
+    }
+  ]
+}

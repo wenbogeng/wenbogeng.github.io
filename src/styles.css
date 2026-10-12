@@ -102,6 +102,17 @@ h1 { margin: 24px 0 14px; font: 700 clamp(30px, 3vw, 44px)/1.35 "Noto Serif SC",
 .summary { margin: 0 0 26px; color: #88857d; font-size: 14px; line-height: 1.8; }
 .experience-context { margin: -8px 0 18px; padding: 12px 14px; border-left: 2px solid #d8d2c6; background: #f5f2e9; color: #6f6d66; font-size: 12px; line-height: 1.75; }
 .experience-context strong { margin-right: 9px; color: #4f504b; font-weight: 600; }
+.source-provenance { color: #73736e; font-size: 11px; line-height: 1.8; overflow-wrap: anywhere; }
+.source-transcript { margin: 0 20px; white-space: pre-wrap; overflow-wrap: anywhere; color: #3f403c; font: 400 14px/1.9 "SFMono-Regular", "Noto Sans SC", monospace; tab-size: 4; }
+.source-gallery { margin: 0 20px; }
+.source-gallery-controls { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.source-gallery-controls button { display: grid; place-items: center; flex: 0 0 36px; height: 36px; border: 1px solid var(--hairline); border-radius: 5px; background: transparent; }
+.source-gallery-controls button:disabled { opacity: .35; cursor: default; }
+.source-gallery-controls label { flex: 1; min-width: 0; color: var(--muted); font-size: 12px; }
+.source-gallery-controls select { width: 100%; margin-top: 5px; padding: 8px; border: 1px solid var(--hairline); border-radius: 5px; background: var(--paper); color: var(--ink); font-size: 12px; }
+.source-gallery figure { margin: 0; }
+.source-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--hairline); border-radius: 4px; }
+.source-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
 .source-link { display: inline-flex; align-items: center; gap: 3px; margin: -6px 0 16px; color: var(--accent); font-size: 12px; text-decoration: none; }
 .source-link:hover { text-decoration: underline; }
 .section-links { display: flex; flex-wrap: wrap; gap: 9px 18px; margin: 16px 20px 0; }
@@ -119,14 +130,19 @@ h1 { margin: 24px 0 14px; font: 700 clamp(30px, 3vw, 44px)/1.35 "Noto Serif SC",
 .answer-section blockquote { margin: 14px 20px 10px; padding: 13px 18px; border-radius: 4px; background: #fff1d9; color: #2d2e2a; font: 500 15px/1.8 "Noto Serif SC", serif; }
 .answer-section ol { margin: 0 0 0 20px; padding-left: 20px; }
 .answer-section li { padding-left: 5px; }
-.exam-questions { display: grid; gap: 26px; margin: 0 20px !important; padding-left: 24px !important; }
-.exam-questions > li { padding-left: 7px; }
-.exam-questions > li > strong { display: block; color: #30312d; font-weight: 600; }
+.exam-questions { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; min-width: 0; margin: 0 20px !important; padding-left: 24px !important; }
+.exam-questions > li { min-width: 0; padding-left: 7px; }
+.exam-questions > li > strong { display: block; color: #30312d; font-weight: 600; overflow-wrap: anywhere; }
 .exam-questions pre { margin: 12px 0; padding: 14px 16px; overflow-x: auto; border: 1px solid #e0dbd0; border-radius: 4px; background: #f5f1e7; color: #383934; font: 12px/1.65 "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
 .exam-questions code { font: inherit; }
 .exam-options { display: grid; gap: 7px; margin-top: 11px; }
 .answer-section .exam-options p { display: grid; grid-template-columns: 24px 1fr; gap: 8px; margin: 0; font-size: 14px; line-height: 1.75; }
 .exam-options span { color: var(--accent); font: 600 12px/24px Inter, sans-serif; }
+.answer-section .transcription-note { margin: 12px 0 0; padding: 10px 13px; border-left: 2px solid #c5a876; background: #f4eedf; color: #75674f; font: 12px/1.85 "Noto Sans SC", sans-serif; overflow-wrap: anywhere; }
+.transcription-note > span { display: block; font-weight: 600; }
+.question-provenance { margin-top: 9px; color: var(--muted); font: 11px/1.8 "Noto Sans SC", sans-serif; }
+.question-provenance summary { cursor: pointer; }
+.answer-section .question-provenance p { margin: 6px 0 0; color: var(--muted); font: inherit; overflow-wrap: anywhere; }
 .experience-code { margin: 20px; overflow: hidden; border: 1px solid #ded8cb; border-radius: 5px; background: #f3efe5; }
 .experience-code > div { padding: 10px 14px; border-bottom: 1px solid #ded8cb; color: #64635c; font-size: 12px; font-weight: 600; letter-spacing: .03em; }
 .experience-code pre { margin: 0; padding: 17px 18px; overflow-x: auto; color: #353631; font: 12px/1.7 "SFMono-Regular", Consolas, "Liberation Mono", monospace; tab-size: 4; }
@@ -203,6 +219,7 @@ h1 { margin: 24px 0 14px; font: 700 clamp(30px, 3vw, 44px)/1.35 "Noto Serif SC",
   .answer-section ol { margin-left: 0; }
   .exam-questions { margin-left: 0 !important; margin-right: 0 !important; }
   .experience-code { margin-left: 0; margin-right: 0; }
+  .source-transcript, .source-gallery { margin-left: 0; margin-right: 0; }
   .answer-actions { position: fixed; left: 12px; right: 12px; bottom: 10px; width: auto; margin: 0; grid-template-columns: .75fr 1fr 1fr .75fr; gap: 6px; padding: 7px; }
   .answer-actions.browse-actions { grid-template-columns: 1fr 1fr; }
   .answer-actions button { min-height: 48px; font-size: 12px; }

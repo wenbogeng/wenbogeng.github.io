@@ -11,6 +11,27 @@ const STATUS_LABELS = { mastered: "已掌握", fuzzy: "模糊", pending: "未掌
 const STATUS_ORDER = { mastered: 0, fuzzy: 1, pending: 2 };
 const REVIEW_QUESTIONS = questions.filter((item) => item.trackProgress !== false);
 
+function SourceGallery({ images }) {
+  const [index, setIndex] = useState(() => Math.max(0, images.findIndex((image) => image.cover)));
+  const image = images[index];
+  const url = `${import.meta.env.BASE_URL}${image.path}`;
+  return (
+    <div className="source-gallery">
+      <div className="source-gallery-controls">
+        <button aria-label="上一张资料图表" disabled={index === 0} onClick={() => setIndex(index - 1)}><ArrowLeft size={18} /></button>
+        <label>资料图表 <select aria-label="选择资料图表" value={index} onChange={(event) => setIndex(Number(event.target.value))}>
+          {images.map((item, i) => <option key={item.path} value={i}>{i + 1} / {images.length} · {item.label}</option>)}
+        </select></label>
+        <button aria-label="下一张资料图表" disabled={index === images.length - 1} onClick={() => setIndex(index + 1)}><ArrowRight size={18} /></button>
+      </div>
+      <figure>
+        <a href={url} target="_blank" rel="noreferrer" aria-label={`放大查看 ${image.label}`}><img key={image.path} src={url} alt={image.label} loading="lazy" /></a>
+        <figcaption>{image.label} · 点击图片放大查看</figcaption>
+      </figure>
+    </div>
+  );
+}
+
 function getItemYear(item) {
   return String(item.date || "").match(/\d{4}/)?.[0] || "未标注年份";
 }
@@ -76,9 +97,10 @@ export function App() {
       const matchesMonth = mode !== "experiences" || month === "全部月份" || getItemMonth(item) === month;
       const sectionText = item.sections.flatMap((section) => [
         section.title,
+        section.transcript || "",
         ...(section.paragraphs || []),
         ...(section.bullets || []),
-        ...(section.questions || []).flatMap((question) => [question.prompt, question.code || "", ...(question.options || [])]),
+        ...(section.questions || []).flatMap((question) => [question.prompt, question.code || "", question.note || "", ...(question.options || [])]),
         ...(section.codeBlocks || []).flatMap((block) => [block.label, block.code])
       ]);
       const haystack = [item.title, item.topic || "", item.company, ...item.tags, ...sectionText].join(" ").toLowerCase();
@@ -295,6 +317,10 @@ export function App() {
           <h1>{current.title}</h1>
           <p className="summary">{current.summary}</p>
           {current.context && <p className="experience-context"><strong>场次备注</strong>{current.context}</p>}
+          {current.sourceFiles && <details className="source-provenance">
+            <summary>资料来源 · {current.sourceFiles.length} 个文件或记录</summary>
+            <ul>{current.sourceFiles.map((file) => <li key={file}>{file}</li>)}</ul>
+          </details>}
           {current.sourceUrl && <a className="source-link" href={current.sourceUrl} target="_blank" rel="noreferrer">查看原题 <CaretRight size={15} /></a>}
           {mode === "review" && (
             <button className="reveal" onClick={() => setAnswerVisible((value) => !value)}>
@@ -305,15 +331,17 @@ export function App() {
           {mode !== "review" || answerVisible ? (
             <div className="answer-content">
               {current.sections.map((section, sectionIndex) => (
-                <section key={section.title} className="answer-section">
+                <section key={`${current.id}-${sectionIndex}`} className="answer-section">
                   <h2><span />{section.title}</h2>
                   {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   {section.highlight && <blockquote>{section.highlight}</blockquote>}
+                  {section.transcript && <pre className="source-transcript">{section.transcript}</pre>}
+                  {section.images && <SourceGallery key={`${current.id}-${sectionIndex}`} images={section.images} />}
                   {section.bullets && <ol className={sectionIndex === current.sections.length - 1 ? "questions-list" : ""}>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ol>}
                   {section.questions && (
                     <ol className="exam-questions">
-                      {section.questions.map((question) => (
-                        <li key={question.prompt + (question.code || "")}>
+                      {section.questions.map((question, questionIndex) => (
+                        <li key={`${sectionIndex}-${questionIndex}`} value={question.number}>
                           <strong>{question.prompt}</strong>
                           {question.code && <pre><code>{question.code}</code></pre>}
                           {question.options && (
@@ -321,6 +349,11 @@ export function App() {
                               {question.options.map((option, optionIndex) => <p key={option}><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</p>)}
                             </div>
                           )}
+                          {question.note && <p className="transcription-note"><span>转写备注</span>{question.note}</p>}
+                          {question.sourceReferences && <details className="question-provenance">
+                            <summary>原始资料 · {question.sourceReferences.length} 个记录</summary>
+                            <p>{question.sourceReferences.join(" · ")}</p>
+                          </details>}
                         </li>
                       ))}
                     </ol>
@@ -333,7 +366,7 @@ export function App() {
                   ))}
                   {section.links && (
                     <div className="section-links">
-                      {section.links.map((link) => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<CaretRight size={15} /></a>)}
+                      {section.links.map((link) => <a key={link.url || link.path} href={link.path ? `${import.meta.env.BASE_URL}${link.path}` : link.url} target="_blank" rel="noreferrer">{link.label}<CaretRight size={15} /></a>)}
                     </div>
                   )}
                 </section>
