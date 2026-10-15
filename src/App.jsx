@@ -14,8 +14,18 @@ const STATUS_LABELS = { mastered: "已掌握", fuzzy: "模糊", pending: "未掌
 const STATUS_ORDER = { mastered: 0, fuzzy: 1, pending: 2 };
 const REVIEW_QUESTIONS = questions.filter((item) => item.trackProgress !== false);
 
-function QuestionSolution({ question }) {
+function QuestionSolution({ question, readable = false }) {
   if (!question.solution) return null;
+  if (readable) return <div className="readable-solution">
+    <div className="solution-heading"><strong>解题思路与参考解法</strong><span>补充解析</span></div>
+    {question.solution.map((block, index) => <div className="solution-block" key={index}>
+      <div className="solution-step-heading"><span>{String(index + 1).padStart(2, "0")}</span><h4>{block.title}</h4></div>
+      {block.paragraphs?.map((text, i) => <p key={i}>{text}</p>)}
+      {block.bullets && <ul>{block.bullets.map((text, i) => <li key={i}>{text}</li>)}</ul>}
+      {block.code && <div className="solution-code-block"><div className="solution-code-bar">代码实现 / 解析</div><pre><code>{block.code}</code></pre></div>}
+      {block.links && <div className="solution-links">{block.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<CaretRight size={13} /></a>)}</div>}
+    </div>)}
+  </div>;
   return (
     <details className="question-solution" open={question.solutionExpanded || undefined}>
       <summary>解题思路与参考解法<span>补充解析</span></summary>
@@ -50,19 +60,19 @@ function ExperienceContents({ item }) {
   const isOa = getExperienceStage(item) === "OA";
   const entries = item.sections.flatMap((section, sectionIndex) =>
     isOa && section.questions?.length ? section.questions.map((question, questionIndex) => ({
-      type: getQuestionType(section, question), label: question.prompt,
+      type: getQuestionType(section, question), label: question.shortTitle || question.prompt, number: question.displayNumber,
       target: `question-${sectionIndex}-${questionIndex}`
     })) : [{ type: getQuestionType(section), label: section.title, target: `section-${sectionIndex}` }]
   );
   return <>
-    <div className="session-head contents-head"><p>{isOa ? "题型导航" : "本场内容"}</p><span>{item.company} · {getExperienceStage(item)}</span></div>
+    <div className="session-head contents-head"><p>{isOa ? "题型导航" : "本场内容"}</p><span>{item.company} · {item.oaLabel || getExperienceStage(item)}</span></div>
     <nav className="contents-navigation" aria-label={isOa ? "OA 题型导航" : "本场内容导航"}>
       {isOa ? OA_TYPES.map(type => {
         const matches = entries.filter(entry => entry.type === type);
         if (!matches.length && !OA_TYPES.slice(0, 4).includes(type)) return null;
         return <details key={type} className="contents-category" open={type === "算法" && matches.length > 0}>
           <summary><span>{type}</span><small>{matches.length ? `${matches.length} 项` : "暂无题目"}</small></summary>
-          {matches.map((entry, index) => <a key={entry.target} href={`#${entry.target}`}><span>{String(index + 1).padStart(2, "0")}</span><span>{entry.label}</span></a>)}
+          {matches.map((entry, index) => <a key={entry.target} href={`#${entry.target}`}><span>{String(entry.number || index + 1).padStart(2, "0")}</span><span>{entry.label}</span></a>)}
         </details>;
       }) : entries.map(entry => <a className="section-anchor" key={entry.target} href={`#${entry.target}`}>{entry.label}</a>)}
     </nav>
@@ -249,7 +259,9 @@ export function App() {
           <CaretRight className={`archive-caret ${isExpanded ? "expanded" : ""}`} size={16} /><span>{folder.company}</span><small>{entries.length}</small>
         </button>
         {isExpanded && <div className="month-list round-list">
-          {folder.stages.map(group => <div key={group.label}>
+          {folder.stages.map(group => group.label === "OA" && group.items.length > 1 && group.items.every(item => item.oaLabel) ? <div key={group.label}>
+            {group.items.map(item => <button className={`month-item ${current.id === item.id ? "active" : ""}`} key={item.id} onClick={() => { setCompany(folder.company); setStage("OA"); selectQuestion(item.id); }}><span>{item.oaLabel}</span></button>)}
+          </div> : <div key={group.label}>
             <button className={`month-item ${group.items.some(item => item.id === current.id) ? "active" : ""}`} aria-pressed={group.items.some(item => item.id === current.id)} onClick={() => { setCompany(folder.company); setStage(group.label); selectQuestion(group.items[0].id); }}><span>{group.label}</span><small>{group.items.length}</small></button>
             {group.items.length > 1 && group.items.map(item => <button className={`month-item session-entry ${current.id === item.id ? "active" : ""}`} key={item.id} onClick={() => { setCompany(folder.company); setStage(group.label); selectQuestion(item.id); }}><span>{item.title}</span></button>)}
           </div>)}
@@ -323,7 +335,7 @@ export function App() {
             </details>}
             {!companyFolders.length && !collectedFolders.length && <p className="folder-empty">没有匹配的公司</p>}
           </nav>
-        ) : (
+        ) : mode === "review" ? (
           <div className="side-section companies">
             <p className="side-label">公司</p>
             <label className="company-select">
@@ -335,7 +347,7 @@ export function App() {
               <CaretRight size={16} />
             </label>
           </div>
-        )}
+        ) : null}
 
         {mode === "experiences" && (
           <details className="side-section year-archive"><summary className="side-label">按时间查看</summary>
@@ -369,8 +381,7 @@ export function App() {
         )}
 
 
-        <div className="sidebar-footer">
-          {mode === "review" ? (
+        {mode === "review" && <div className="sidebar-footer">
             <>
               <div className="footer-progress">
                 <Brain size={20} />
@@ -378,15 +389,14 @@ export function App() {
               </div>
               <button className="side-item subtle"><Command size={20} /><span>快捷键</span><small>1 / 2</small></button>
             </>
-          ) : <p className="browse-note">只读浏览 · 内容由本地文件维护</p>}
-        </div>
+        </div>}
       </aside>
 
       <main className="reader">
         <header className="reader-toolbar">
           <div className="breadcrumb">
             <span>{mode === "experiences" ? "完整面经" : current.topic}</span><i>·</i>
-            {(mode === "experiences" ? [current.company, getExperienceStage(current)] : current.tags).map((tag) => <span key={tag}>{tag}</span>)}
+            {(mode === "experiences" ? [current.company, current.oaLabel || getExperienceStage(current)] : current.tags).map((tag) => <span key={tag}>{tag}</span>)}
           </div>
           {mode !== "knowledge" && <div className="toolbar-actions">
             <button className={currentState.favorite ? "selected" : ""} onClick={() => updateState({ favorite: !currentState.favorite })}>
@@ -395,7 +405,7 @@ export function App() {
           </div>}
         </header>
 
-        <article className="article">
+        <article className={`article ${current.readingLayout === "question-reader" ? "question-reader" : ""}`}>
           <div className="meta">
             <span>{current.company}</span><i>·</i><span>{current.type}</span><i>·</i><span>{current.round}</span><i>·</i>
             <time dateTime={/^\d{4}-\d{2}-\d{2}$/.test(current.date) ? `${current.date}${current.time ? `T${current.time}` : ""}` : undefined}>
@@ -435,15 +445,18 @@ export function App() {
                     <ol className="exam-questions">
                       {section.questions.map((question, questionIndex) => (
                         <li id={`question-${sectionIndex}-${questionIndex}`} key={`${sectionIndex}-${questionIndex}`} value={question.number}>
-                          <strong>{question.prompt}</strong>
+                          {current.readingLayout === "question-reader" ? <>
+                            <header className="exam-question-heading"><span>Q{String(question.displayNumber).padStart(2, "0")}</span><div><small>{getQuestionType(section, question)}</small><h3>{question.shortTitle}</h3></div></header>
+                            <div className="question-statement"><span className="question-part-label">题目</span><p>{question.prompt}</p></div>
+                          </> : <strong>{question.prompt}</strong>}
                           {question.code && <pre><code>{question.code}</code></pre>}
                           {question.options && (
                             <div className="exam-options">
                               {question.options.map((option, optionIndex) => <p key={option}><span>{String.fromCharCode(65 + optionIndex)}</span>{option}</p>)}
                             </div>
                           )}
-                          {question.note && <p className="transcription-note"><span>转写备注</span>{question.note}</p>}
-                          <QuestionSolution question={question} />
+                          {question.note && (current.readingLayout === "question-reader" ? <details className="question-note"><summary>题意与转写说明</summary><p>{question.note}</p></details> : <p className="transcription-note"><span>转写备注</span>{question.note}</p>)}
+                          <QuestionSolution question={question} readable={current.readingLayout === "question-reader"} />
                           {question.sourceReferences && <details className="question-provenance">
                             <summary>原始资料 · {question.sourceReferences.length} 个记录</summary>
                             <p>{question.sourceReferences.join(" · ")}</p>

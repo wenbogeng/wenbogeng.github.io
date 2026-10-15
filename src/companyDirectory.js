@@ -5,7 +5,7 @@ const pinyinKeys = {
   "CQ 资产（原文缩写）": "cq zichan yuanwen suoxie", "QX（北京，原文缩写）": "qx beijing yuanwen suoxie",
   "QX（上海，原文缩写）": "qx shanghai yuanwen suoxie", "MX（原文缩写）": "mx yuanwen suoxie",
   "QL（原文缩写）": "ql yuanwen suoxie", "TWX（原文缩写）": "twx yuanwen suoxie",
-  "希洛斯投资": "xiluosi touzi", "稳博投资": "wenbo touzi", "万济资本": "wanji ziben",
+  "稳博投资": "wenbo touzi", "万济资本": "wanji ziben",
   "字节跳动·飞书": "zijie tiaodong feishu", "滴滴": "didi", "字节跳动·互娱研发": "zijie tiaodong huyu yanfa",
   "梅卡曼德机器人": "meika mande jiqiren", "平方和投资": "pingfanghe touzi", "交叉科技": "jiaocha keji",
   "又水投资": "youshui touzi", "善流投资": "shanliu touzi", "上海卓胜私募": "shanghai zhuosheng simu",
@@ -30,7 +30,7 @@ const pinyinKeys = {
 
 const techCompanies = new Set(["字节跳动·飞书", "字节跳动·互娱研发", "滴滴", "Uber", "Cisco", "蓝湖", "梅卡曼德机器人", "交叉科技", "MEXC"]);
 const quantCompanies = new Set([
-  "希洛斯投资", "稳博投资", "万济资本", "平方和投资", "又水投资", "善流投资", "上海卓胜私募",
+  "稳博投资", "万济资本", "平方和投资", "又水投资", "善流投资", "上海卓胜私募",
   "武汉布奇科技 / Bridge Investment Partner", "燧石投资", "九坤投资", "启林投资", "希格斯投资", "顽岩",
   "Antelope Technology", "AlphaGrep", "聚宽", "会世资产", "鸣熙", "因诺资产", "乾象投资 / Metabit", "尚雅投资",
   "非凸科技", "宁苑沛骅", "概率投资", "致诚卓远", "银河德睿", "卓瑞", "金锝投资", "IMC", "玄信", "Akuna Capital",

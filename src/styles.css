@@ -302,3 +302,41 @@ h1 { margin: 24px 0 14px; font: 700 clamp(30px, 3vw, 44px)/1.35 "Noto Serif SC",
 .industry-group > summary::before { content: "+"; width: 12px; color: #8d9692; }
 .industry-group[open] > summary::before { content: "−"; }
 .industry-group > summary small { margin-left: auto; color: #8d9692; font-size: 10px; }
+/* An editorial question sheet: distinct questions, readable answers, clear high-contrast code. */
+.question-reader .exam-questions { list-style: none; margin: 0 !important; padding: 0 !important; gap: 64px; }
+.question-reader .exam-questions > li { padding: 32px 0 0; border-top: 2px solid #d5cebf; }
+.exam-question-heading { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 20px; }
+.exam-question-heading > span { color: var(--accent); font: 700 24px/1.3 "Noto Serif SC", serif; min-width: 54px; }
+.exam-question-heading small { font: 600 12px "Noto Sans SC", sans-serif; color: #244431; background: #dcece0; padding: 2px 9px; border-radius: 4px; display: inline-block; margin-bottom: 6px; }
+.exam-question-heading h3 { margin: 4px 0 0; font: 700 22px/1.45 "Noto Serif SC", serif; color: #1b1c1a; }
+.question-statement { padding: 20px 24px; border-left: 4px solid var(--accent); background: #f4eee3; border-radius: 0 6px 6px 0; margin-bottom: 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.question-part-label { color: #534d3f; font: 700 12px "Noto Sans SC", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.answer-section .question-statement p { margin: 10px 0 0; font-size: 16px; line-height: 1.85; color: #1a1a1a; font-weight: 450; }
+.question-reader .exam-options { display: grid; gap: 8px; margin: 16px 0; }
+.question-reader .exam-options p { display: flex; align-items: flex-start; gap: 10px; padding: 11px 15px; background: #f6f3ea; border: 1px solid #ded8cb; border-radius: 6px; font-size: 14.5px; line-height: 1.6; color: #222; }
+.question-reader .exam-options span { font: 700 13px Inter, sans-serif; color: var(--accent); background: #fae8e6; padding: 1px 7px; border-radius: 4px; flex-shrink: 0; }
+.question-reader pre:not(.source-transcript) { margin: 16px 0; padding: 16px 18px; background: #1e2225; color: #f0f3f6; border-radius: 6px; font: 13.5px/1.7 "SFMono-Regular", Consolas, "Liberation Mono", monospace; overflow-x: auto; tab-size: 4; }
+.question-reader pre:not(.source-transcript) code { color: inherit; font: inherit; }
+.readable-solution { margin-top: 26px; background: #faf7f0; border: 1px solid #e3dcce; border-radius: 8px; padding: 22px 26px; }
+.solution-heading { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #e3dcce; }
+.solution-heading strong { font: 700 16px "Noto Sans SC", sans-serif; color: #1c1c1c; }
+.solution-heading > span { color: #5c5545; font-size: 12px; background: #e8e2d4; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+.readable-solution .solution-block { padding: 18px 0; }
+.readable-solution .solution-block + .solution-block { border-top: 1px dashed #ded8cb; }
+.solution-step-heading { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+.solution-step-heading > span { color: var(--accent); font: 700 13px "Noto Sans SC", sans-serif; background: #fae8e6; padding: 2px 8px; border-radius: 4px; }
+.solution-step-heading h4 { margin: 0; font: 700 16px/1.6 "Noto Sans SC", sans-serif; color: #1e1e1e; }
+.readable-solution .solution-block p, .readable-solution .solution-block li { font: 400 15px/1.85 "Noto Sans SC", sans-serif; color: #282828; margin: 8px 0; }
+.solution-code-block { margin-top: 14px; border: 1px solid #383e45; border-radius: 6px; overflow: hidden; background: #1c2023; }
+.solution-code-bar { padding: 6px 14px; background: #282d32; color: #cfd5dc; font: 600 12px "Noto Sans SC", sans-serif; border-bottom: 1px solid #383e45; }
+.solution-code-block pre { margin: 0 !important; padding: 16px 18px !important; background: #1c2023 !important; color: #f0f3f6 !important; font: 13.5px/1.7 "SFMono-Regular", Consolas, "Liberation Mono", monospace !important; border-radius: 0 !important; }
+.question-note { margin: 16px 0; background: #fdfaf2; border: 1px solid #e7decd; border-radius: 6px; padding: 12px 18px; }
+.question-note summary { font: 600 13px "Noto Sans SC", sans-serif; color: #6b5c36; cursor: pointer; }
+.answer-section .question-note p { margin: 8px 0 0; color: #3b372e; font: 14px/1.75 "Noto Sans SC", sans-serif; }
+@media (max-width: 600px) {
+  .exam-question-heading { gap: 12px; }
+  .exam-question-heading h3 { font-size: 20px; }
+  .question-statement { padding: 16px; }
+  .question-reader .exam-questions { gap: 44px; }
+  .readable-solution { padding: 16px; }
+}
