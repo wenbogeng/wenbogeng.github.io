@@ -5008,5 +5008,767 @@ export const companyExperiences = [
       "面经.xlsx / 面经 / 第 58 行"
     ],
     "context": "这是收集的面经资料；叙述、时间和评价属于原文作者，未认定为站点所有者的亲历。多轮流程按原记录合并保存，正文中的 OA 为笔试。"
+  },
+  {
+    "id": "wanyan-written-recollection",
+    "company": "顽岩",
+    "type": "笔试",
+    "round": "OA · 综合笔试",
+    "date": "2026-08-11",
+    "time": "",
+    "duration": "未记录",
+    "title": "顽岩 · 算法、C++ 与系统设计笔试",
+    "summary": "4 道算法的暴力解与优化思路、订单管理代码审阅、排行榜协议设计、3 道 C++ 场景题、工作协同及 23 项基础知识解析。",
+    "tags": [
+      "C++",
+      "算法",
+      "Brute Force",
+      "系统设计",
+      "网络",
+      "Linux",
+      "Python",
+      "NumPy",
+      "量化交易"
+    ],
+    "context": "依据提供的 Markdown 笔试记录整理。参考解析为后补内容，原题回忆与题意假设有明确区分；树构造的大范围最优性证明仍待核对。",
+    "sourceFiles": [
+      "顽岩笔试 3f9d37e3c824803a9019defc35a1a6ad.md"
+    ],
+    "sections": [
+      {
+        "title": "算法 ACM · 暴力解与优化思路",
+        "paragraphs": [
+          "前四道算法按题意、Brute Force、优化和边界分开整理。可运行代码与验证范围均有标注；countSmaller 的题干由原代码语义补全。"
+        ],
+        "questions": [
+          {
+            "prompt": "数组两两差值的绝对值累乘，对 m 取模。输入第一行 n、m，第二行 n 个整数 aᵢ；求 ∏(i<j)|aᵢ−aⱼ| mod m。示例：n=3、m=3，a=[1,2,3]，输出 2。",
+            "solution": [
+              {
+                "title": "Brute Force · 枚举每个无序数对",
+                "paragraphs": [
+                  "外层固定 i，内层枚举 j=i+1…n−1。每一对只乘一次，不能把 (i,j) 和 (j,i) 重复计算，也不能只乘相邻元素。每步取模，避免先算巨大乘积。",
+                  "例子中三对差值为 1、2、1；答案是 1×2×1 mod 3 = 2。n=1 时空积为 1，再对 m 取模；m=1 时结果为 0。时间 O(n²)，除输入数组外 O(1) 额外空间。"
+                ],
+                "code": "long long ans = 1 % m;\nfor (size_t i = 0; i < a.size(); ++i) {\n    for (size_t j = i + 1; j < a.size(); ++j) {\n        __int128 d = (__int128)a[i] - (__int128)a[j];\n        if (d < 0) d = -d;\n        ans = (long long)((__int128)ans * (d % m) % m);\n    }\n}"
+              },
+              {
+                "title": "优化 · 抽屉原理提前判零",
+                "paragraphs": [
+                  "m 必须为正整数。把元素按对 m 的余数分类，只有 m 种余数；n>m 时必有一对同余，差值含因子 m，因此整个乘积 mod m 为 0。否则仍枚举全部数对，不能只算排序后相邻差值。",
+                  "总时间 O(n + min(n,m)²)，最坏仍是 O(n²)；原稿没有 n、m 上界，所以不能声称该剪枝一定满足正式测评时限。__int128 同时保护 long long 极值相减以及模乘中间值；这是 GCC/Clang 扩展。"
+                ],
+                "code": "#include <algorithm>\n#include <iostream>\n#include <stdexcept>\n#include <vector>\nusing namespace std;\nusing i128 = __int128_t;\nlong long pairProduct(const vector<long long>& a, long long m, bool fast) {\n    if (m <= 0) throw invalid_argument(\"m must be positive\");\n    // m 个余数，n > m 必然有两个数同余。\n    if (fast && static_cast<unsigned long long>(a.size()) > static_cast<unsigned long long>(m)) return 0;\n    long long ans = 1 % m;\n    for (size_t i = 0; i < a.size(); ++i) {\n        for (size_t j = i + 1; j < a.size(); ++j) {\n            i128 d = (i128)a[i] - (i128)a[j];\n            if (d < 0) d = -d;\n            ans = (long long)((i128)ans * (d % m) % m);\n            if (fast && ans == 0) return 0;\n        }\n    }\n    return ans;\n}\nint main(int argc, char**) {\n    ios::sync_with_stdio(false); cin.tie(nullptr);\n    int n; long long m;\n    if (!(cin >> n >> m) || n < 0 || m <= 0) return 1;\n    vector<long long> a(n); for (auto& x : a) cin >> x;\n    cout << pairProduct(a, m, argc == 1) << '\\n'; // 任意参数切换为暴力版。\n}\n"
+              },
+              {
+                "title": "易错点与检验",
+                "paragraphs": [
+                  "[1,2,4]、m=2：答案为 0；[5,5]、m=7：答案为 0；[-2,1,4]、m=7：答案为 54 mod 7 = 5。归并排序统计逆序对不能替代本题乘积；原稿下一段 countSmaller 已归到独立题目。"
+                ]
+              }
+            ],
+            "note": "原文没有数据范围；这里按整数数组、正模数补充解法。",
+            "solutionExpanded": true
+          },
+          {
+            "prompt": "统计每个元素右侧严格小于它的元素个数。输入 n 和数组，按原下标输出 n 个计数。例：[5,2,6,1] → [2,1,1,0]。",
+            "solution": [
+              {
+                "title": "Brute Force · 固定左端点，扫描右侧",
+                "paragraphs": [
+                  "对每个 i 检查全部 j>i，只有 a[j]<a[i] 才给 ans[i] 加一。严格小于意味着相等元素不计数。两重循环时间 O(n²)，答案数组 O(n)。"
+                ],
+                "code": "vector<int> ans(a.size());\nfor (size_t i = 0; i < a.size(); ++i)\n    for (size_t j = i + 1; j < a.size(); ++j)\n        if (a[j] < a[i]) ++ans[i];"
+              },
+              {
+                "title": "优化 · 带原下标的归并排序",
+                "paragraphs": [
+                  "按原下标切分左右两半，因此右半的所有元素原先都在左半元素右侧。两半排好序后，右侧严格较小的元素先出列；左侧元素出列时，已出列的右侧元素数量 j−mid，就是它在本次跨区间合并中的贡献。递归还会累计各半内部的贡献。",
+                  "相等时先取左侧，防止把相等值误算为更小。按 ids 保存原位置，排序后不能丢掉答案对应关系。整体时间 O(n log n)，辅助数组 O(n)，递归栈 O(log n)。"
+                ],
+                "code": "#include <algorithm>\n#include <iostream>\n#include <numeric>\n#include <vector>\nusing namespace std;\nvector<int> brute(const vector<long long>& a) {\n    vector<int> ans(a.size());\n    for (size_t i = 0; i < a.size(); ++i)\n        for (size_t j = i + 1; j < a.size(); ++j)\n            if (a[j] < a[i]) ++ans[i];\n    return ans;\n}\nvector<int> mergeCount(const vector<long long>& a) {\n    int n = (int)a.size();\n    vector<int> ids(n), tmp(n), ans(n);\n    iota(ids.begin(), ids.end(), 0);\n    auto sort = [&](auto&& self, int l, int r) -> void {\n        if (r - l <= 1) return;\n        int mid = l + (r - l) / 2;\n        self(self, l, mid); self(self, mid, r);\n        int i = l, j = mid, p = l;\n        while (i < mid && j < r) {\n            if (a[ids[j]] < a[ids[i]]) tmp[p++] = ids[j++];\n            else { ans[ids[i]] += j - mid; tmp[p++] = ids[i++]; }\n        }\n        while (i < mid) { ans[ids[i]] += j - mid; tmp[p++] = ids[i++]; }\n        while (j < r) tmp[p++] = ids[j++];\n        copy(tmp.begin() + l, tmp.begin() + r, ids.begin() + l);\n    };\n    sort(sort, 0, n);\n    return ans;\n}\nint main(int argc, char**) {\n    int n; if (!(cin >> n) || n < 0) return 1;\n    vector<long long> a(n); for (auto& x : a) cin >> x;\n    auto ans = argc == 1 ? mergeCount(a) : brute(a);\n    for (int i = 0; i < n; ++i) cout << (i ? \" \" : \"\") << ans[i];\n    cout << '\\n';\n}\n"
+              },
+              {
+                "title": "边界与复述",
+                "paragraphs": [
+                  "空数组返回空数组；[2,2] → [0,0]；[3,2,1] → [2,1,0]；[-1,-2,-1] → [1,0,0]。面试先写暴力，再解释“合并时计算跨区间贡献”，而不是只背归并模板。"
+                ]
+              }
+            ],
+            "note": "原稿只有 countSmaller 代码，没有单独题干；该题面根据函数语义补全，例子为补充示例。"
+          },
+          {
+            "prompt": "数字字符串的解码方式数：给定仅含数字的字符串，统计合法解码方案。例如 \"12\" → 2。",
+            "solution": [
+              {
+                "title": "先确认映射规则",
+                "paragraphs": [
+                  "以下沿用原稿代码的 1→A、…、26→Z：单独的 0 不合法，10 和 20 合法，前导 0 不合法。它不同于 0→a、…、25→z 的“数字翻译”题；如果真实试卷采用后者，转移条件必须更改。"
+                ]
+              },
+              {
+                "title": "Brute Force · 每个位置尝试取 1 位或 2 位",
+                "paragraphs": [
+                  "从位置 i 开始搜索。到字符串末尾返回 1；当前位置为 0 返回 0；先选一个合法的一位数，再尝试 10–26 的两位数，把两棵子树的方案数相加。",
+                  "\"226\"：2|2|6、22|6、2|26，共 3 种。\"06\" → 0，\"10\" → 1，\"100\" → 0。搜索树至多二叉展开，粗略上界 O(2ⁿ)，递归栈 O(n)；只适合短串。"
+                ],
+                "code": "// add 为十进制大整数加法；pairOK 检查两位数是否在 10..26。\nstring brute(const string& s, size_t i) {\n    if (i == s.size()) return \"1\";\n    if (s[i] == '0') return \"0\";\n    string ans = brute(s, i + 1);\n    if (pairOK(s, i)) ans = add(ans, brute(s, i + 2));\n    return ans;\n}"
+              },
+              {
+                "title": "优化 · DP 消除重复子问题",
+                "paragraphs": [
+                  "dp[i] 表示前 i 个字符的解码数，dp[0]=1 是完成一次合法切分的计数基底。如果 s[i−1] 非 0，加 dp[i−1]；如果末两位组成 10–26，加 dp[i−2]。两项分别对应最后一个字母来自一位还是两位，互斥且覆盖全部合法方案。",
+                  "保留前两个状态即可。算术按常数计时为 O(n) 次转移、O(1) 个计数器；下方代码用十进制字符串避免原稿 int 溢出，计数有 O(n) 位时最坏 O(n²) 字符运算、O(n) 字符空间。无取模要求时不要擅自取模。"
+                ],
+                "code": "#include <algorithm>\n#include <iostream>\n#include <string>\nusing namespace std;\n// 十进制大整数加法，避免原稿 int / long long 的溢出。\nstring add(string a, string b) {\n    string out; int carry = 0;\n    int i = (int)a.size() - 1, j = (int)b.size() - 1;\n    while (i >= 0 || j >= 0 || carry) {\n        int v = carry;\n        if (i >= 0) v += a[i--] - '0';\n        if (j >= 0) v += b[j--] - '0';\n        out.push_back(char('0' + v % 10)); carry = v / 10;\n    }\n    reverse(out.begin(), out.end()); return out;\n}\nbool pairOK(const string& s, size_t i) {\n    return i + 1 < s.size() && (s[i] == '1' || (s[i] == '2' && s[i + 1] <= '6'));\n}\nstring brute(const string& s, size_t i) {\n    if (i == s.size()) return \"1\";\n    if (s[i] == '0') return \"0\";\n    string ans = brute(s, i + 1);\n    if (pairOK(s, i)) ans = add(ans, brute(s, i + 2));\n    return ans;\n}\nstring dynamic(const string& s) {\n    if (s.empty()) return \"0\";\n    string prev2 = \"1\", prev1 = s[0] == '0' ? \"0\" : \"1\";\n    for (size_t i = 1; i < s.size(); ++i) {\n        string cur = s[i] == '0' ? \"0\" : prev1;\n        if (pairOK(s, i - 1)) cur = add(cur, prev2);\n        prev2 = prev1; prev1 = cur;\n    }\n    return prev1;\n}\nint main(int argc, char**) {\n    string s; if (!(cin >> s)) return 1;\n    if (!all_of(s.begin(), s.end(), [](char c) { return c >= '0' && c <= '9'; })) return 1;\n    if (argc > 1 && s.size() > 30) { cerr << \"brute force: use at most 30 digits\\n\"; return 1; }\n    cout << (argc == 1 ? dynamic(s) : brute(s, 0)) << '\\n';\n}\n"
+              }
+            ],
+            "note": "缺失映射定义，按原稿程序的 1–26 规则解析；未虚构输入长度上界。"
+          },
+          {
+            "prompt": "小红的树构造：n 个节点，其中 k 个权值为 2，其余为 3。路径权值是路径上所有节点权值之积的正因子数量；有效路径至少含一条边，u→v 与 v→u 视为同一条。求所有有效路径权值乘积的最小值，最终对 10⁹+7 取模。2≤n≤10⁹，0≤k≤n。样例：4 3 → 5184。",
+            "solution": [
+              {
+                "title": "把因子数写成可计算形式",
+                "paragraphs": [
+                  "一条路径含 a 个 2、b 个 3，节点乘积为 2ᵃ3ᵇ，因此正因子数量是 (a+1)(b+1)。只枚举不同端点的无序对，共 n(n−1)/2 条路径，不计单点路径。"
+                ]
+              },
+              {
+                "title": "Brute Force · 枚举全部树，再枚举全部路径",
+                "paragraphs": [
+                  "用长度为 n−2 的 Prüfer 序列一一枚举全部 n^(n−2) 棵带标号树。固定前 k 个节点权值为 2，剩余为 3；由于所有带标号树都被枚举，其他赋权排列可通过重标号覆盖，不必再乘组合数。",
+                  "对每棵树，从每个起点 DFS，携带路径中 2、3 的数量，只对终点编号大于起点的路径累乘 (a+1)(b+1)。用 Python 任意精度整数比较真实乘积，找到最小值后才取模。每树 O(n²) 次路径访问，总 O(nⁿ) 次访问（不含大整数运算成本）、O(n) 图和搜索辅助空间。实现把 n 限为 7，仅用于精确小数据验证。"
+                ],
+                "code": "\"\"\"精确暴力：枚举全部带标号树，先比较任意精度整数，最后取模。\n仅供 n <= 7 的小数据对拍；不是 n <= 10**9 的提交解。\n\"\"\"\nfrom itertools import product\nfrom heapq import heapify, heappop, heappush\nMOD = 1_000_000_007\n\ndef edges_from_prufer(n, code):\n    degree = [1] * n\n    for x in code:\n        degree[x] += 1\n    leaves = [i for i, d in enumerate(degree) if d == 1]\n    heapify(leaves)\n    edges = []\n    for x in code:\n        leaf = heappop(leaves)\n        edges.append((leaf, x))\n        degree[leaf] -= 1\n        degree[x] -= 1\n        if degree[x] == 1:\n            heappush(leaves, x)\n    edges.append((heappop(leaves), heappop(leaves)))\n    return edges\n\ndef objective(n, k, edges):\n    graph = [[] for _ in range(n)]\n    for u, v in edges:\n        graph[u].append(v)\n        graph[v].append(u)\n    result = 1\n    for source in range(n):\n        stack = [(source, -1, 0, 0)]\n        while stack:\n            u, parent, twos, threes = stack.pop()\n            twos += u < k\n            threes += u >= k\n            if u > source:  # 只统计不同端点的无序对。\n                result *= (twos + 1) * (threes + 1)\n            for v in graph[u]:\n                if v != parent:\n                    stack.append((v, u, twos, threes))\n    return result\n\ndef minimum(n, k):\n    if not 2 <= n <= 7 or not 0 <= k <= n:\n        raise ValueError(\"精确暴力仅支持 2 <= n <= 7、0 <= k <= n\")\n    # 同色节点可交换标号，固定前 k 个节点为 2 不会漏掉树形/赋权方案。\n    return min(objective(n, k, edges_from_prufer(n, code))\n               for code in product(range(n), repeat=n - 2))\n\nif __name__ == '__main__':\n    n, k = map(int, input().split())\n    print(minimum(n, k) % MOD)\n"
+              },
+              {
+                "title": "原稿的两个错误 · 不是只改 min 就够",
+                "paragraphs": [
+                  "中心为 2 的星形中，两个权值 3 的叶子之间经过 3–2–3，乘积 18 的因子数为 6，原稿误写为 3。中心为 3 时，两个权值 2 的叶子之间经过 2–3–2，乘积 12 的因子数也为 6，原稿同样误写为 3。",
+                  "取模不保持大小顺序：6<8，但 6 mod 7=6 > 8 mod 7=1。必须在取模前确定真正更小的构造，不能比较余数。"
+                ]
+              },
+              {
+                "title": "纠正星形候选公式",
+                "paragraphs": [
+                  "令 x 为与中心同色的节点总数，y 为异色节点数（x+y=n，x≥1）。中心到同色叶子的贡献 3^(x−1)，到异色叶子为 4ʸ；两同色叶子为 4^C(x−1,2)，两异色叶子为 6^C(y,2)，异色叶子对为 6^((x−1)y)。",
+                  "因此星形候选为 3^(x−1) × 4^[y+C(x−1,2)] × 6^[C(y,2)+(x−1)y]。样例 x=3、y=1 得 3²×4²×6²=5184。混色星形的中心交换比值 P₂/P₃ = [9×4^(n−5)×6^(3−n)]^((k−(n−k))/2)；n≥3 时方括号小于 1，故两种星形中多数颜色作中心更优，相等则等价。n=2 只有一条边。"
+                ]
+              },
+              {
+                "title": "验证范围与尚未证明的结论",
+                "paragraphs": [
+                  "已用全部 Prüfer 序列核对 2≤n≤7 的所有 k（同色交换对称），星形候选与精确最小值一致。但小数据对拍不是“任意最优树都可化为星形”的证明；原稿也没有这个证明。",
+                  "下方 O(log n) 程序仅声明为纠正后的星形候选计算器，不作为已经证明的 n≤10⁹ 正式提交解。精确暴力的含义和适用范围已完整给出；大范围全局最优结论仍需要严格的树变换论证或原题官方解析核对。"
+                ],
+                "code": "// 星形候选公式已纠正；不将小数据一致误写成全局最优证明。\n// 若没有另行证明“最优树一定可取星形”，本程序只求两种星形中的最优值。\n#include <iostream>\nusing namespace std;\nconst long long MOD = 1000000007;\nlong long power(long long a, long long b) {\n    long long r = 1;\n    for (; b; b >>= 1, a = a * a % MOD) if (b & 1) r = r * a % MOD;\n    return r;\n}\nlong long choose2(long long x) { return x * (x - 1) / 2; }\nint main() {\n    long long n, k; if (!(cin >> n >> k) || n < 2 || n > 1000000000LL || k < 0 || k > n) return 1;\n    long long l = n - k;\n    // n >= 3 时两种星形相比，多数颜色作中心更优；相等则相同。\n    bool center2 = k >= l;\n    long long same = center2 ? k : l, other = center2 ? l : k;\n    long long e3 = same - 1;\n    long long e4 = other + choose2(same - 1);\n    long long e6 = choose2(other) + (same - 1) * other;\n    cout << power(3, e3) * power(4, e4) % MOD * power(6, e6) % MOD << '\\n';\n}\n"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "C++ 代码审阅 · 订单管理与风控",
+        "questions": [
+          {
+            "prompt": "审阅 OrderManager：找出缺陷、讨论可扩展性，并说明 TradingSystem、OrderManager、RiskMonitor、PositionManager、Strategy 的职责边界。",
+            "solution": [
+              {
+                "title": "先还原原稿能确认的结构",
+                "paragraphs": [
+                  "原文说明 TradingSystem 聚合合约、持仓、风控、订单管理；Strategy 提交订单并接收回报；TradingHouse 为辅助测试类。已提供的代码中，OrderManager 生成 order_ref、保存订单并向 IOrderCallback 回调 Accepted / Rejected / Traded。其余类未提供源码，不能声称已经审阅其实现。"
+                ]
+              },
+              {
+                "title": "正确性 · 状态机和成交数量",
+                "paragraphs": [
+                  "原 ReqOrderInsert 在返回 order_ref 之前同步调用 AcceptOrder。策略可能还没记录订单号就收到回报；这不是异步交易通道的真实时序。先登记本地请求并返回本地 id，再由事件循环处理交易所回报。",
+                  "TradeOrder 一次回报就标为 Traded，没有剩余量、累计成交量、部分成交；未检查 volume>0、超量成交、有限/合法价格。重复成交回报会重复更新持仓；Accepted→Rejected→Traded 也能任意覆盖状态。需要显式 PendingNew、Accepted、PartiallyFilled、Filled、Rejected、PendingCancel、Canceled 状态和合法迁移。",
+                  "用 exec_id 去重；终态不因迟到的受理回报退回 Accepted；撤单中仍可能成交。收到矛盾回报时隔离并告警、触发对账，不能把真实成交默默丢弃。订单、成交、持仓和冻结风险应遵循同一事件序列。"
+                ]
+              },
+              {
+                "title": "输入、价格与风险",
+                "paragraphs": [
+                  "合约必须存在；side 合法；数量为正且符合手数；价格有限、符合 tick 和涨跌停规则。NaN/inf 不能依靠普通大小比较过滤。",
+                  "价格用 tick 数或约定精度的整数，金额累加做溢出检查。发送前做持仓、额度和速率检查并冻结额度；拒单/撤单释放未成交部分，成交只更新一次持仓与风险。风控失败不应向交易所发单。"
+                ]
+              },
+              {
+                "title": "并发、生命周期和重入",
+                "paragraphs": [
+                  "next_order_ref_、orders_、callback_ 都没有同步，多线程调用有数据竞争；加一个 atomic 订单号不能让整个管理器线程安全。低延迟实现可选单线程事件循环拥有可变状态，其他线程只投递消息；或用明确锁粒度。",
+                  "callback_ 为裸指针，需要约定注销、退出与对象寿命；GetOrder 返回内部地址，不具备并发一致性，清理订单后会悬空，优先返回快照。回调可能重入并再次发单或触发错误处理，调用后不能继续假定迭代器、状态或对象寿命未变；也不要持锁调用外部策略。"
+                ]
+              },
+              {
+                "title": "可扩展性与性能",
+                "paragraphs": [
+                  "把交易所适配器与订单状态机分离；事件包含本地 id、交易所 id、策略 id、session / trading day、序列号、时间戳、exec_id。覆盖撤改单、拒单原因、重连、重放、未知订单回报和对账。",
+                  "std::map 不是单凭 O(log n) 就判错：先分析规模、缓存和延迟分位数，再决定平坦容器、预分配或哈希。无界保留 orders_ 会持续占内存；终态订单归档，热路径保持可控容量，队列做背压。回调记录成不可变事件，保证可重放、可观测、可测量。"
+                ]
+              },
+              {
+                "title": "建议的事件处理顺序",
+                "paragraphs": [],
+                "code": "策略请求\n  → 合约/价格/数量校验\n  → 风控检查与额度预占\n  → 创建 PendingNew 订单，返回本地 id\n  → 适配器发送\n\n交易所回报\n  → 会话/序列/exec_id 校验与去重\n  → 状态机合法迁移，累计成交量与剩余量\n  → 同步更新持仓、冻结额度与风险\n  → 生成不可变事件，交给策略和监控\n  → 持久化/对账/异常告警"
+              },
+              {
+                "title": "测试重点",
+                "paragraphs": [
+                  "重复 exec_id 不得重复计仓；两次部分成交恰好满单；累计数量不能越过原始数量；拒单和迟到的 Accepted 不可复活终态；成交可与撤单交错；回调重入、断连重放、订单归档后查询都要覆盖。此处给出审阅和设计建议，未把示意状态机冒充可直接实盘使用的完整系统。"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "系统设计 · 实时排行榜广播",
+        "questions": [
+          {
+            "prompt": "设计实时排行榜广播系统：每 500 ms 生成全部房间最新榜单，房间数几十至上百；每个房间包含红队 Top 5 和蓝队 Top 5。客户端接收所有房间，快速解析并展示。说明协议、字节布局、发送/接收流程和扩展方案。",
+            "solution": [
+              {
+                "title": "先确定语义与规模",
+                "paragraphs": [
+                  "按整批全量快照发布，序列号在同一发布会话内单调增加；同一个 seq 的所有房间来自同一逻辑快照。分数相同用 player_id 升序打破平局，少于 5 人时用实际数量，不伪造玩家。",
+                  "默认每个玩家以 uint64 id + int64 score 表示，排名由数组顺序隐含。100 房间 × (8 字节房间头 + 10×16 字节玩家) + 32 字节总头 = 16,832 字节/快照，2 Hz 约 33,664 字节/秒/客户端（不含网络开销）；广播扇出成本还要乘订阅者数量。"
+                ]
+              },
+              {
+                "title": "传输协议 · 基线选 TCP 全量快照",
+                "paragraphs": [
+                  "先采用长连接 TCP；TCP 是字节流，必须显式长度定帧，不能假设一次 recv 就是一条消息。客户端维护接收缓冲，读够 32 字节头并验证长度后，再等完整帧。跨公网可使用 TLS；浏览器客户端需要 WebSocket 承载，不能直接使用裸 TCP。",
+                  "500 ms 更新且数据量较小，全量快照便于丢弃过期的尚未发送批次。每连接设有界队列，只保留当前发送帧和最新待发送帧；已部分发送的 TCP 帧必须发完，不能从中间截断，否则后续 framing 失步。长期落后客户端断开后重新拉取最新快照。"
+                ]
+              },
+              {
+                "title": "二进制布局 · 所有整数使用网络字节序",
+                "paragraphs": [],
+                "code": "总头：32 字节（显式逐字段编码，不能直接 memcpy C++ struct）\noffset  type      meaning\n0       byte[4]   magic = \"RANK\"\n4       uint16    version = 1\n6       uint16    header_bytes = 32\n8       uint32    message_bytes（包含头部）\n12      uint64    sequence（连接/发布会话内单调）\n20      uint64    snapshot_timestamp_ms\n28      uint16    room_count\n30      uint16    flags（bit0 = 全量快照；其余保留）\n\n每个房间头：8 字节\nuint32 room_id | uint8 red_count | uint8 blue_count | uint16 reserved\n随后 red_count 个红队记录，再随后 blue_count 个蓝队记录\n每条玩家记录：uint64 player_id | int64 score（16 字节）\n排名由顺序表示；count 范围 0..5；room_id 在一帧内不得重复。"
+              },
+              {
+                "title": "架构与处理流程",
+                "paragraphs": [],
+                "code": "游戏逻辑/分数更新\n  → 每房间红/蓝队 Top 5 计算\n  → 500 ms 时钟截取一致快照\n  → 编码器写入复用的连续缓冲\n  → 广播网关/多连接扇出\n  → TCP/TLS 长连接\n  → 客户端接收缓冲和长度定帧\n  → 版本/长度/count/seq 校验\n  → 解码到后台快照\n  → 原子替换展示快照，渲染线程只读最新完整批次"
+              },
+              {
+                "title": "解析和性能",
+                "paragraphs": [
+                  "遍历每队玩家时维护容量为 5 的小顶堆，P 个玩家时间 O(P log 5)，随后最多 5 项排序；更新频繁时维护有序索引，并明确一致性边界。快照编码一次，多连接复用只读缓冲，注意引用计数和发送完成的释放时机。",
+                  "读取字段先检查剩余字节，限制总帧长（例如配置为 1 MiB）、房间数和 count，检查所有长度计算溢出；解析结束必须刚好消费 message_bytes。不要把非对齐网络缓冲强转成 struct 指针，也不要发送裸指针、容器或平台相关的 long。"
+                ]
+              },
+              {
+                "title": "扩展和取舍",
+                "paragraphs": [
+                  "同局域网、订阅者很多时可以评估 UDP 组播，但它没有可靠交付或有序保证。16 KB 全量消息不可直接假设放进一个安全 UDP 数据报；做应用层分片（如每片不超过约 1200 字节），包含 session_id、seq、分片序号/总数、长度和校验，超时整批丢弃，并以单播快照恢复。互联网客户端通常不能依赖组播。",
+                  "增量协议节约带宽但必须带 base_seq 和新 seq，缺失依赖时请求全量；保留周期性快照。扩展字段用版本与 TLV / 字段长度，未知字段可跳过。固定格式易于手工解析，但 Protobuf / FlatBuffers 等方案应按兼容性、依赖与实际解析性能评估，不能只凭“零拷贝”口号选择。",
+                  "监控生成到接收的延迟、队列长度、丢弃旧快照次数、重连、解码失败、吞吐和客户端落后程度。不要把网络发送与游戏主循环互相阻塞。"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "C++ 场景题 · 多态、模板与线程",
+        "questions": [
+          {
+            "prompt": "多态为什么失效？原稿提到 std::vector<Strategy> 按值保存派生类对象，push_back 后派生类 factor_ 丢失。",
+            "solution": [
+              {
+                "title": "参考答案 · 对象切片（原选项 B）",
+                "paragraphs": [
+                  "按给定现象选择 B。vector<Strategy> 的每个元素都是完整的基类值对象，派生对象被复制为基类时只保留基类子对象。即使 compute 正确声明为虚函数，切片后的动态类型也已经是 Strategy。",
+                  "用 vector<unique_ptr<Strategy>> 表达独占所有权，基类析构函数设为 virtual，派生函数写 override。签名、const、引用限定符必须匹配；不能只看到 compute 同名就认定覆盖。"
+                ]
+              },
+              {
+                "title": "补充示例 · 保留动态类型",
+                "paragraphs": [],
+                "code": "struct Strategy {\n    virtual ~Strategy() = default;\n    virtual double compute() const { return 0; }\n};\nstruct FactorStrategy : Strategy {\n    double factor = 2;\n    double compute() const override { return factor; }\n};\nstd::vector<std::unique_ptr<Strategy>> strategies;\nstrategies.push_back(std::make_unique<FactorStrategy>());\n// strategies[0]->compute() == 2；没有按值切片。",
+                "links": [
+                  {
+                    "label": "C++ 标准草案 · 虚函数",
+                    "url": "https://eel.is/c++draft/class.virtual"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              "compute 没有正确 override",
+              "vector<Strategy> 按值保存发生 object slicing",
+              "虚函数声明错误",
+              "const 导致虚函数无法调用"
+            ],
+            "note": "原稿缺少实际类定义；示例为补充演示，不能据此排除真实代码同时有签名错误。"
+          },
+          {
+            "prompt": "C++17 右折叠 sum(std::string(\"hello\"), \"\", \"world\") 的结果是什么？template<typename... Ts> auto sum(Ts... args) { return (args + ...); }",
+            "solution": [
+              {
+                "title": "参考答案 · 编译错误（原选项 B）",
+                "paragraphs": [
+                  "右折叠展开为 std::string(\"hello\") + (\"\" + \"world\")。最内层两个字符串字面量在这里退化成指针，没有指针加指针的合法 + 运算；还没轮到 std::string 的拼接就已经不合法。",
+                  "左折叠 (... + args) 展开为 (std::string(\"hello\") + \"\") + \"world\"，该特定调用可行。更稳健地把各参数转换为 std::string 后逐一追加，空参数包也能得到空串。"
+                ]
+              },
+              {
+                "title": "补充实现",
+                "paragraphs": [],
+                "code": "template<class... Ts>\nstd::string concat(Ts&&... args) {\n    std::string result;\n    (result.append(std::forward<Ts>(args)), ...);\n    return result;\n}\n// concat(\"hello\", \"\", \"world\") == \"helloworld\"\n// concat() == \"\"",
+                "links": [
+                  {
+                    "label": "C++ 标准草案 · 折叠表达式",
+                    "url": "https://eel.is/c++draft/expr.prim.fold"
+                  }
+                ]
+              }
+            ],
+            "options": [
+              "输出 helloworld",
+              "编译错误",
+              "输出 hello world",
+              "运行时错误"
+            ],
+            "note": "原文的函数返回类型、调用逗号和结尾有笔误，题面按其明确描述的三实参右折叠语义整理。"
+          },
+          {
+            "prompt": "Monitor 的工作线程调用 stop()，stop() 内对同一个 worker_ 执行 join()。会发生什么？",
+            "solution": [
+              {
+                "title": "参考答案 · 自己 join 自己会抛出异常",
+                "paragraphs": [
+                  "当前线程的 id 与 worker_.get_id() 相同，join 应报告 resource_deadlock_would_occur，抛出 std::system_error。joinable() 只表示该 thread 对象仍关联一个线程，不表示当前调用线程可以安全 join 它。",
+                  "如果异常逃出线程入口，程序会调用 std::terminate；若在析构期间抛出且析构为 noexcept，也会终止。不要简单回答“永远阻塞”，更不能把 detach 当作修复：lambda 捕获 this，detach 后对象析构会引入悬空访问。"
+                ]
+              },
+              {
+                "title": "安全设计 · 请求停止与等待退出分开",
+                "paragraphs": [
+                  "工作线程只发出停止请求并返回；由拥有对象的外部线程 join。start / join / 析构应由同一生命周期管理者串行调用，禁止自析构。原稿的 worker/workder、runing/running 和括号拼写需先校正，不能把伪代码当成可编译代码。"
+                ],
+                "code": "void request_stop() noexcept { running_.store(false); }\nvoid join_from_owner() {\n    // 调用约定：只允许外部拥有者线程调用；不能与 start 并发。\n    if (worker_.joinable()) {\n        if (worker_.get_id() == std::this_thread::get_id())\n            throw std::logic_error(\"join must be called by owner\");\n        worker_.join();\n    }\n}\n// worker 的循环内部只调用 request_stop()，然后退出。",
+                "links": [
+                  {
+                    "label": "C++ 标准草案 · thread::join",
+                    "url": "https://eel.is/c++draft/thread.thread.member"
+                  }
+                ]
+              }
+            ],
+            "note": "原 Monitor 代码语法残缺；这里按“工作线程自调用 stop 并自 join”的明确考点解析，不虚构完整原代码。"
+          }
+        ]
+      },
+      {
+        "title": "工作协同与生产故障处理",
+        "questions": [
+          {
+            "prompt": "五项工作如何排优先级、分工和协调？生产策略信号延迟已影响交易；下午需面试候选人；Leader 要求当天部署仪表盘；CI/CD 出错阻塞团队提交；本周需完成技术方案。处理期间又收到内存 95%、超时且影响多个下游的告警，应如何调整？",
+            "solution": [
+              {
+                "title": "排序原则与初始安排",
+                "paragraphs": [
+                  "按当前业务影响、紧迫性、可恢复性和依赖阻塞排序，不按谁催得急排序。假设仪表盘不承担当前故障恢复、下午面试可协调：生产交易延迟先处理；并行安排能负责流水线的同事修复 CI/CD；面试提前确认是否找替代面试官；仪表盘在风险可控且流水线恢复后推进；本周方案安排集中时间。",
+                  "这里不是唯一固定顺序：如果仪表盘正是故障所需观测能力，或流水线阻塞紧急修复，它们的优先级应上调。自己优先负责最熟悉的交易链路诊断；请 SRE/平台同事查系统和流水线；请同组面试官接面试，由 HR 同步候选人，不能静默缺席。"
+                ]
+              },
+              {
+                "title": "新告警出现后的第一步",
+                "paragraphs": [
+                  "先确认告警是否真实、受影响实例/下游与当前业务影响，立即通知值班负责人并明确事故指挥与分工；查看 OOM、RSS/堆/页缓存、容器限制、流量和队列。内存 95% 只是信号，Linux 页缓存占用高不自动等于泄漏。",
+                  "若已出现超时和连锁影响，将其作为生产故障优先止损：按既定预案限流/暂停非关键任务、隔离慢消费者、切流或回滚，必要时安全重启。交易相关进程先考虑未决订单、持仓/风险状态和主备接管，不能直接 kill 后假设恢复。保留最小必要证据，但不为抓完整 dump 延误恢复或加重内存压力。"
+                ]
+              },
+              {
+                "title": "分工与沟通",
+                "paragraphs": [
+                  "事故负责人协调优先级；链路负责人查延迟和依赖；SRE 查内存/OOM/容量；平台同事查发布与流水线。同步清楚影响范围、当前缓解动作、负责人、下一次更新时间；向 Leader 说明部署延期原因、给 HR 确认替代安排。记录决策时间线，避免所有人同时操作同一实例。"
+                ]
+              },
+              {
+                "title": "恢复后防止再次发生",
+                "paragraphs": [
+                  "先验证 p99 延迟、错误率、队列、内存趋势和交易状态恢复，再逐步解除限流。区分泄漏、无界缓存/队列、突发流量、慢下游和发布回归。用堆/分配剖析和对账定位根因。",
+                  "增加队列/缓存上限、TTL/淘汰、背压、容量预算、回归压测与故障演练；告警从单个百分比扩展为趋势、剩余容量、OOM 与业务 SLO 联动。形成有负责人和完成期限的复盘行动，而不是只写“扩容/重启”。"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "选择与填空 · 基础知识参考解析",
+        "paragraphs": [
+          "以下按原文 23 个主题逐项补充。原稿中未记录的选项、ABI 和数据范围不猜补；参考结论注明成立前提。"
+        ],
+        "questions": [
+          {
+            "prompt": "局域网内主机互通，但无法访问公网。DNS、主机/局域网网关、未配置网关、主机 IP 中哪些可能有问题？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "优先检查默认路由/网关及上游转发。仅凭“内网能通、外网不通”不能唯一选择。",
+                  "先 ping 公网 IP：公网 IP 可达但域名解析失败才重点查 DNS；若 IP 也不通，查 ip route、默认网关、ARP/邻居、路由/NAT/出口策略。内网互通不保证 IP/掩码完全正确，也不排除上游故障。公网禁 ICMP 时 ping 失败也不等于全部公网业务失败。"
+                ]
+              }
+            ],
+            "note": "原文选项文字有误且未给出公网测试对象是 IP 还是域名；不能直接把 DNS 判为必错。"
+          },
+          {
+            "prompt": "哪些操作会使用户态切换到内核态：整数除以 0、sin 函数调用、read 系统调用？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "read 系统调用会进入内核；普通 sin 数学库调用通常不会。整数除零若确实执行为硬件除零异常，也会转入内核异常处理。",
+                  "C/C++ 整数除以 0 本身是未定义行为，编译器可删除或改变相关代码；不能说所有语言、所有优化下的 1/0 都必定产生特定陷阱。浮点除零还依赖浮点环境，不等同于整数除零。"
+                ]
+              }
+            ],
+            "note": "原稿 int/0 按整数除零理解；若它指的是 int 软件中断指令，含义应重新确认。"
+          },
+          {
+            "prompt": "3 个并发进程，每个最多需要 4 个同类资源。保证不会发生资源型死锁的最少资源数是多少？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "10 个。",
+                  "最坏每个进程持有 3 个并等待最后 1 个，3×3=9 个资源全部占用；再增加 1 个，总有进程能拿齐 4 个并完成释放。公式 R≥P(K−1)+1。前提是同类可复用资源、每进程最多 K 个、获得足够资源能完成，且不考虑其他死锁原因。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "Python：d = {}; d[[1,2]] = \"hello\"; print(d)，输出什么？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "赋值时抛出 TypeError: unhashable type: 'list'，不会执行 print。",
+                  "字典键必须可哈希，list 可变且不可哈希；这里可用 (1,2) 作为键。不要说所有 tuple 都可哈希，含 list 的 tuple 仍不可哈希。"
+                ],
+                "code": "d = {}\nd[(1, 2)] = \"hello\"\nprint(d)  # {(1, 2): \"hello\"}"
+              }
+            ]
+          },
+          {
+            "prompt": "Linux 中不能被进程捕获的信号有哪些？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "SIGKILL 和 SIGSTOP。",
+                  "它们不能被捕获、忽略或阻塞；SIGTERM 可安装处理器用于清理退出，SIGTSTP 不等于 SIGSTOP。"
+                ],
+                "links": [
+                  {
+                    "label": "Linux signal 手册",
+                    "url": "https://man7.org/linux/man-pages/man7/signal.7.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "struct A { int a; union { long b; short c; }; }; struct B { char e; A d; int f; }; sizeof(B) 是多少？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "常见 x86-64 Linux LP64 ABI、默认对齐下为 32 字节；不能不说明平台就给唯一值。",
+                  "LP64：union 大小/对齐均为 8；A 的 int 在偏移 0，union 在偏移 8，sizeof(A)=16、alignof(A)=8。B 的 e 在 0，d 在 8，f 在 24，尾部补齐到 32。常见 ILP32 或 Windows LLP64（long=4）下通常是 16。pack 和 ABI 可改变布局。"
+                ],
+                "code": "struct A { int a; union { long b; short c; }; };\nstruct B { char e; A d; int f; };\n// sizeof、alignof 与 offsetof 可在指定编译平台直接核对。"
+              }
+            ],
+            "note": "原稿缺分号/括号；这里仅修正语法，保持匿名 union 的布局问题。"
+          },
+          {
+            "prompt": "NumPy 哪个一定产生数据拷贝：a[a>0]、a[:]、a.view()、a.reshape(2,3)？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "对于普通 ndarray，读取 a[a>0] 使用布尔高级索引，会产生拷贝。",
+                  "切片 a[:] 和 a.view() 是视图；reshape 能视图时返回视图，否则需要拷贝，故不能说 reshape 一定拷贝。注意 a[mask]=... 是原地索引赋值，不等同于取出 b=a[mask]。"
+                ],
+                "links": [
+                  {
+                    "label": "NumPy · Copies and views",
+                    "url": "https://numpy.org/doc/stable/user/basics.copies.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "C/C++ 调用已经声明但未定义的普通外部函数，通常在哪个阶段发现？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "通常在链接阶段报 undefined reference / unresolved external symbol。",
+                  "区分“未声明”与“声明了未定义”：前者常在编译期报错。动态加载/延迟绑定可能推迟至加载或运行时，优化也可能消除调用；按普通静态构建流程回答链接。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "经典三状态进程模型中，阻塞→就绪、运行→阻塞、阻塞→运行、就绪→运行，哪个不能直接发生？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "阻塞→运行不能直接发生。",
+                  "等待事件完成后先从阻塞进入就绪，再由调度器安排就绪→运行；运行等待 I/O 则进入阻塞。这里是经典抽象模型，不把两个紧邻的调度事件误当成一个直接迁移。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "系统有 4 台打印机，每个作业最多独占 2 台。最多允许多少个作业并发竞争，才能保证不会因打印机分配死锁？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "最多允许 3 个作业并发竞争。",
+                  "R≥P(K−1)+1，代入 R=4、K=2，得 P≤3。若 4 个作业各占 1 台都等待第二台，就可能死锁。“并发竞争作业数”不是“同时已拿齐 2 台并打印的作业数”；后者最多只有 2 个。"
+                ]
+              }
+            ],
+            "note": "原题“同时执行”可能指已占足资源的运行作业；已把两种语义分别说明。"
+          },
+          {
+            "prompt": "TCP 套接字中哪个操作不会阻塞？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "缺少具体选项和套接字模式，无法唯一作答。",
+                  "阻塞模式 connect 等连接建立，accept 等新连接，recv 等数据/关闭，send 在发送缓冲不足时可等待。socket/bind/listen 一般不等待对端网络事件，但不能因此推广为所有调用永远不会等待。设置 O_NONBLOCK 后相关操作按约定返回 EAGAIN/EWOULDBLOCK 或 EINPROGRESS，并用就绪通知和 SO_ERROR 等检查后续状态。"
+                ]
+              }
+            ],
+            "note": "原文未记录选项，保留题意缺口；不虚构标准选项字母。"
+          },
+          {
+            "prompt": "合并 N 条长度都为 M 的有序链表，并保持有序，时间复杂度是多少？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "使用 N 路小顶堆归并为 O(NM log N)，堆额外空间 O(N)（N=1 时 O(M)）。",
+                  "每条链表的当前头结点入堆，每次取最小节点并推进对应链，NM 个节点各做一次出入堆。Brute Force 是每输出一个节点扫描全部 N 个链表头，时间 O(N²M)；分治两两归并也能达到 O(NM log N)。输出链表若复用节点无需额外 NM 个节点。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "awk 正在读取 log 并抽取字段到 CSV，此时 rm 删除 log，会发生什么？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "若 awk 已打开该文件，unlink 删除目录项不使已打开的文件描述符失效，awk 可继续读旧文件。",
+                  "当最后一个硬链接和打开引用都释放后，存储才可回收。rm 后同名新文件是新的对象，原 awk 不会自动切到新文件；如果 awk 还未打开就被删除，则打开会失败。重定向已写出的 CSV 不因此消失。"
+                ],
+                "links": [
+                  {
+                    "label": "Linux unlink 手册",
+                    "url": "https://man7.org/linux/man-pages/man2/unlink.2.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "软链接/硬链接：哪种共享 inode、删除源路径后怎样、能否跨文件系统？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "同一文件系统中的硬链接共享 inode；软链接有自己的 inode，保存目标路径。",
+                  "删除一个硬链接只减少链接数，其他硬链接仍可访问；删除软链接指向的唯一目标路径后通常成为悬空链接。硬链接不能跨文件系统；软链接可指向另一文件系统路径。仅比较 inode 数字还需结合设备号确认文件身份。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "NumPy 广播机制的核心匹配规则是什么？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "从最右维向左对齐：对应维相等，或其中一个为 1 才兼容；缺少的左侧维按 1 处理。",
+                  "例如 (3,1) 与 (1,4) 得 (3,4)；(3,) 与 (4,) 不兼容。广播通常不复制被扩展的输入数据，但表达式的计算结果可能分配很大的输出数组。"
+                ],
+                "links": [
+                  {
+                    "label": "NumPy · Broadcasting",
+                    "url": "https://numpy.org/doc/stable/user/basics.broadcasting.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "Python：x=1；def change(a): x += 1; print(x)；change(x)，结果是什么？",
+            "navigationType": "填空",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "抛出 UnboundLocalError，不会打印 2。",
+                  "函数内给 x 赋值使 x 在该作用域被判为局部变量；x += 1 先读后写，但局部 x 尚未绑定。参数 a 不影响这个判定。若想返回新值，可用 return a+1 并在外部赋回；若明确修改全局，需 global x。"
+                ],
+                "code": "x = 1\ndef change(a):\n    x += 1\n    print(x)\nchange(x)",
+                "links": [
+                  {
+                    "label": "Python · Execution model",
+                    "url": "https://docs.python.org/3/reference/executionmodel.html"
+                  }
+                ]
+              }
+            ],
+            "note": "按原文的 x += 1 位于 change 函数内理解，已补齐缩进。"
+          },
+          {
+            "prompt": "numpy.memmap：是否支持随机访问、多个进程只读映射、映射是否受物理内存限制、是否一次加载全部数据？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "支持下标随机访问；多个进程可以同时只读映射同一文件。",
+                  "映射使用虚拟地址空间，数据按需分页，不要求整个文件一次装进 RAM；受虚拟地址、文件大小、操作系统和资源限制，32 位进程限制尤其明显。memmap 并非零 I/O，随机访问可能产生缺页和磁盘 I/O。"
+                ],
+                "links": [
+                  {
+                    "label": "NumPy · memmap",
+                    "url": "https://numpy.org/doc/stable/reference/generated/numpy.memmap.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "引用和指针：初始化、空值、重新绑定及传参方式有哪些区别？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "普通引用定义时需要绑定对象，之后不能重新绑定；指针可以为空，也可改指向。",
+                  "对引用赋值是修改被引用对象，不是换绑。未初始化的自动存储期指针通常是不确定值，不能使用；“指针不必初始化”不是安全建议。合法引用应绑定有效对象，非法地解引用空指针来形成引用不提供有效的“空引用”。",
+                  "“引用传值、指针传地址”表述不准确：T& 形参是别名；T* 形参本身仍按值复制指针，可修改所指对象，但给该指针形参重新赋值不会改动调用方指针，除非使用 T*& 或 T**。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "一个线程能创建或撤销另一个线程吗？一个程序至少有一个进程，一个进程至少有一个线程吗？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "线程可以通过运行库/系统接口创建线程；撤销要看具体 API，不能等同于任意强制杀掉其他线程。",
+                  "C++ std::thread 没有安全的任意 kill；优先协作式停止和 join，POSIX pthread_cancel 也依赖取消状态/取消点与清理约定。进程运行时通常至少有一个线程，但“程序”是静态代码/文件，可尚未运行，也可对应多个进程，不能说任意程序此刻都至少有一个进程。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "线程自己不拥有系统资源，操作系统最小调度单位是进程，这句话对吗？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "整体不正确。以常见 Linux 线程模型而言，内核调度线程/任务，进程常作为地址空间和资源容器。",
+                  "同进程线程共享地址空间、文件描述符等，但各自具有栈、寄存器上下文、线程 id 和 TLS 等状态；“线程完全不拥有任何资源”过于绝对。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "C++ 构造函数有返回类型吗？一定是 public 吗？可以重载吗？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "构造函数没有返回类型（也不能写 void）；可以是 public / protected / private；可以重载。",
+                  "访问控制可限制创建方式，例如工厂函数或基类。构造函数不能是 virtual；构造/析构期间的虚调用也有特定规则，不能假设会分派到尚未构造或已销毁的派生部分。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "不同线程共享相同栈空间吗？线程比进程的并发度更高吗？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "各线程通常有各自的栈；“线程一定比进程并发度更高”不成立。",
+                  "同一进程地址空间允许线程持有其他线程栈对象的地址，但这不意味着共同使用同一个调用栈，还要保证对象寿命与同步。并行程度取决于 CPU 核、调度、工作负载和共享竞争；线程往往创建/切换成本较低，不等于天然获得更高并行度。"
+                ]
+              }
+            ]
+          },
+          {
+            "prompt": "C++ 虚函数能内联吗？模板能是虚函数吗？运行时/编译期多态怎么区分？",
+            "navigationType": "选择",
+            "solution": [
+              {
+                "title": "参考答案与思路",
+                "paragraphs": [
+                  "虚函数可以被声明为 inline；当编译器能确定调用目标时，也可以去虚化并内联。",
+                  "普通虚函数通过动态分派体现运行时多态；模板实例化通常提供编译期多态。成员函数模板不能声明为 virtual，但类模板里的普通成员函数可以是 virtual，类模板实例也可以参与虚继承/动态分派。inline 关键字的定义/ODR 语义与优化器实际是否展开调用是两件事。"
+                ],
+                "links": [
+                  {
+                    "label": "C++ 标准草案 · 虚函数",
+                    "url": "https://eel.is/c++draft/class.virtual"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "原稿与核对说明",
+        "paragraphs": [
+          "上面的题面只修正明显笔误并标注缺失，所有参考解析、示例和代码验证均为后补内容，不认定为公司官方答案。原稿全文在下面折叠保留，包括原有未校正代码。",
+          "算法可运行版本见仓库 docs/code/wanyan；树构造的精确暴力仅支持小规模，星形候选尚缺全局最优证明。原文件未修改；笔试日期由所有者补充为 2026-08-11，归档于 OA。时长与公司全称未在原稿中提供。"
+        ],
+        "sourceTranscript": "# 顽岩笔试\n\n算法 ACM\n\n```cpp\n牛牛有一个长度为 n 的数组 a 牛牛今天对数组元素之间的差值很感兴趣，于是牛牛想将数组元素凉凉的差值的绝对值进行累乘 \n输入第一行为 n m 表示数组长度和模数 第二行表示 n 个数组 表示元素ai\n输出为一行 表示取模后的答案 \n实例\n输入\n3 3\n1 2 3 \n输出 2 \n说明\n｜1-2｜x |1 -3 | x |2-3| = 2 mod 3 = 2\n```\n\nBrute force \n\nHigh Level Merge Sort\n\n```cpp\n#include <bits/stdc++.h>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> countSmaller(vector<int>& nums) {\n        int n = nums.size();\n        vector<int> ans(n, 0);\n        vector<pair<int, int>> arr;\n\n        for (int i = 0; i < n; i++) {\n            arr.push_back({nums[i], i});\n        }\n\n        mergeSort(arr, 0, n - 1, ans);\n        return ans;\n    }\n\n    void mergeSort(vector<pair<int, int>>& arr, int l, int r, vector<int>& ans) {\n        if (l >= r) return;\n\n        int mid = l + (r - l) / 2;\n        mergeSort(arr, l, mid, ans);\n        mergeSort(arr, mid + 1, r, ans);\n\n        vector<pair<int, int>> temp;\n        int i = l, j = mid + 1;\n        int rightSmaller = 0;\n\n        while (i <= mid && j <= r) {\n            if (arr[j].first < arr[i].first) {\n                rightSmaller++;\n                temp.push_back(arr[j]);\n                j++;\n            } else {\n                ans[arr[i].second] += rightSmaller;\n                temp.push_back(arr[i]);\n                i++;\n            }\n        }\n\n        while (i <= mid) {\n            ans[arr[i].second] += rightSmaller;\n            temp.push_back(arr[i]);\n            i++;\n        }\n\n        while (j <= r) {\n            temp.push_back(arr[j]);\n            j++;\n        }\n\n        for (int k = l; k <= r; k++) {\n            arr[k] = temp[k - l];\n        }\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n\n    vector<int> nums(n);\n    for (int i = 0; i < n; i++) {\n        cin >> nums[i];\n    }\n\n    Solution sol;\n    vector<int> count = sol.countSmaller(nums);\n\n    for (int i = 0; i < n; i++) {\n        if (i) cout << \" \";\n        cout << count[i];\n    }\n    cout << endl;\n\n    return 0;\n}\n```\n\n数字翻译成字符串 有一种将字母编码成数字的方式 现在给一串数字 返回有多少种可能的编码效果 输入 12 输出 2\n\nHigh Level DP \n\n```\ndp[0] 表示空字符串的解码方式数\ndp[1] 表示 \"2\" 的解码方式数\ndp[2] 表示 \"22\" 的解码方式数\ndp[3] 表示 \"226\" 的解码方式数\n```\n\n```cpp\n#include <bits/stdc++.h>\nusing namespace std;\n\nint main() {\n    string s;\n    cin >> s;\n\n    int n = s.size();\n    if (n == 0) {\n        cout << 0 << endl;\n        return 0;\n    }\n\n    vector<int> dp(n + 1, 0);\n    dp[0] = 1;\n\n    for (int i = 1; i <= n; i++) {\n        // 单独使用 s[i - 1]\n        if (s[i - 1] != '0') {\n            dp[i] += dp[i - 1];\n        }\n\n        // 使用 s[i - 2] 和 s[i - 1] 组成两位数\n        if (i >= 2) {\n            int num = (s[i - 2] - '0') * 10 + (s[i - 1] - '0');\n            if (num >= 10 && num <= 26) {\n                dp[i] += dp[i - 2];\n            }\n        }\n    }\n\n    cout << dp[n] << endl;\n    return 0;\n}\n```\n\n```cpp\n小红的树构造 小红想让你早一棵树 公有 n 个节点 其中k 个节点权值为  2 。n-k 个节点的权值为 3 。小红定义路径权值为路径上所有点权值乘积的因子数量，只有长度不小于 1 的路径是有效的 {u 到 v v 到 u 是同一条路径}\n小红希望所有的路径权值乘积仅可能的小 \n\n你不需要构造出树，只需啊哟输出最小的权值即可，答案对 10^9 + 7 取模\n\n输入 两个正整数 n 和 k 用空格隔开\n\n2 <=n <=10^9 \n0 <=k <=n \n\n输出  最小的权值乘积 对 10^9 + 7 取模\n\n输入 4 3 \n\n输出 \n5184\n\n我们构造这样一棵树\n1 2 3 号节点权值为2 4 号节点为3 \n1和2 连一条边，2 和 3 连一条边，2 和 4 连一条边\n一共有 6 条路径，所有路径的权值乘积 就是 5184\n```\n\n```cpp\n#include <iostream>\nusing namespace std;\n\nconst long long MOD = 1000000007;\n\nlong long qpow(long long a, long long b) {\n    long long ans = 1;\n\n    while (b > 0) {\n        if (b % 2 == 1) {\n            ans = ans * a % MOD;\n        }\n\n        a = a * a % MOD;\n        b = b / 2;\n    }\n\n    return ans;\n}\n\nlong long C2(long long x) {\n    if (x < 2) return 0;\n    return x * (x - 1) / 2;\n}\n\nlong long calc_center_2(long long n, long long k) {\n    long long cnt2 = k;\n    long long cnt3 = n - k;\n\n    if (cnt2 == 0) return -1;\n\n    long long ans = 1;\n\n    ans = ans * qpow(3, cnt2 - 1) % MOD;\n    ans = ans * qpow(4, cnt3) % MOD;\n    ans = ans * qpow(4, C2(cnt2 - 1)) % MOD;\n    ans = ans * qpow(3, C2(cnt3)) % MOD;\n    ans = ans * qpow(6, (cnt2 - 1) * cnt3) % MOD;\n\n    return ans;\n}\n\nlong long calc_center_3(long long n, long long k) {\n    long long cnt2 = k;\n    long long cnt3 = n - k;\n\n    if (cnt3 == 0) return -1;\n\n    long long ans = 1;\n\n    ans = ans * qpow(4, cnt2) % MOD;\n    ans = ans * qpow(3, cnt3 - 1) % MOD;\n    ans = ans * qpow(3, C2(cnt2)) % MOD;\n    ans = ans * qpow(4, C2(cnt3 - 1)) % MOD;\n    ans = ans * qpow(6, cnt2 * (cnt3 - 1)) % MOD;\n\n    return ans;\n}\n\nint main() {\n    long long n, k;\n    cin >> n >> k;\n\n    long long ans1 = calc_center_2(n, k);\n    long long ans2 = calc_center_3(n, k);\n\n    if (ans1 == -1) {\n        cout << ans2 << endl;\n    } else if (ans2 == -1) {\n        cout << ans1 << endl;\n    } else {\n        cout << min(ans1, ans2) << endl;\n    }\n\n    return 0;\n}\n```\n\n代码存在缺陷以及可扩展性 \n\nRiskmonitor 主要是\nTradingSystem 封装合约管理 持仓管理 封控管理和订单管理 Ordermanger 实现了Iodercallback 创建订单之类的移步回报处理 持仓 风控 TradingHous 辅助测试类，Strategy 实现 IO人的人擦了两把查看通用锅 tradingsytem 提交订单并接受 main 是实例流程\n\nordermanger 主要是有 ReqOrderInset InOrderaccpey Onorderreject 和 onOrdertrade\n\n```cpp\n#include <cstdint>\n#include <iostream>\n#include <map>\n#include <string>\n\nenum class Side {\n    Buy,\n    Sell\n};\n\nenum class OrderStatus {\n    New,\n    Accepted,\n    Rejected,\n    Traded\n};\n\nstruct OrderRequest {\n    std::string instrument_id;\n    Side side;\n    double price;\n    int32_t volume;\n};\n\nstruct Order {\n    uint64_t order_ref;\n    std::string instrument_id;\n    Side side;\n    double price;\n    int32_t volume;\n    OrderStatus status;\n};\n\nstruct OrderRejectInfo {\n    uint64_t order_ref;\n    std::string reason;\n};\n\nstruct TradeInfo {\n    uint64_t order_ref;\n    std::string instrument_id;\n    Side side;\n    double price;\n    int32_t volume;\n};\n\nclass IOrderCallback {\npublic:\n    virtual ~IOrderCallback() = default;\n\n    virtual void OnOrderAccepted(uint64_t order_ref) = 0;\n    virtual void OnOrderRejected(const OrderRejectInfo& info) = 0;\n    virtual void OnOrderTraded(const TradeInfo& info) = 0;\n};\n\nclass OrderManager {\npublic:\n    OrderManager()\n        : next_order_ref_(1), callback_(nullptr) {\n    }\n\n    void SetCallback(IOrderCallback* callback) {\n        callback_ = callback;\n    }\n\n    uint64_t ReqOrderInsert(const OrderRequest& request) {\n        uint64_t order_ref = next_order_ref_;\n        next_order_ref_++;\n\n        Order order;\n        order.order_ref = order_ref;\n        order.instrument_id = request.instrument_id;\n        order.side = request.side;\n        order.price = request.price;\n        order.volume = request.volume;\n        order.status = OrderStatus::New;\n\n        orders_[order_ref] = order;\n\n        AcceptOrder(order_ref);\n\n        return order_ref;\n    }\n\n    const Order* GetOrder(uint64_t order_ref) const {\n        auto it = orders_.find(order_ref);\n\n        if (it == orders_.end()) {\n            return nullptr;\n        }\n\n        return &it->second;\n    }\n\n    void RejectOrder(uint64_t order_ref, const std::string& reason) {\n        auto it = orders_.find(order_ref);\n\n        if (it == orders_.end()) {\n            return;\n        }\n\n        it->second.status = OrderStatus::Rejected;\n\n        if (callback_ != nullptr) {\n            OrderRejectInfo info;\n            info.order_ref = order_ref;\n            info.reason = reason;\n\n            callback_->OnOrderRejected(info);\n        }\n    }\n\n    void TradeOrder(uint64_t order_ref, double price, int32_t volume) {\n        auto it = orders_.find(order_ref);\n\n        if (it == orders_.end()) {\n            return;\n        }\n\n        it->second.status = OrderStatus::Traded;\n\n        if (callback_ != nullptr) {\n            TradeInfo info;\n            info.order_ref = order_ref;\n            info.instrument_id = it->second.instrument_id;\n            info.side = it->second.side;\n            info.price = price;\n            info.volume = volume;\n\n            callback_->OnOrderTraded(info);\n        }\n    }\n\nprivate:\n    void AcceptOrder(uint64_t order_ref) {\n        auto it = orders_.find(order_ref);\n\n        if (it == orders_.end()) {\n            return;\n        }\n\n        it->second.status = OrderStatus::Accepted;\n\n        if (callback_ != nullptr) {\n            callback_->OnOrderAccepted(order_ref);\n        }\n    }\n\nprivate:\n    uint64_t next_order_ref_;\n    std::map<uint64_t, Order> orders_;\n    IOrderCallback* callback_;\n};\n```\n\n设计题\n\n实时排行的数据广播系统，想想一个大型的在线游戏平台，平台上有多个游戏房间，每个放假哪的玩家都在实时竞技 系统需啊哟维护每个房间的实时排行榜 TOP 5 玩家，江畔航班数据广播给观战客户端\n\n基本设定\n\n服务器每 500ms 会生成一次所有房间的最新排行榜\n\n每次发布所有房间的排行榜数据，房间数量为 几十到上百个\n\n每隔房间的排行榜包含：\n\n红队 top5 得分最高的 5 名红队玩家\n\n蓝队 top5 得分最高的 5 名蓝队玩家\n\n设计目标\n\n下游的观战客户端需要通过网络接收全部的是这些数据 并尽可能快速的解析和渲染排行榜\n\n系统架构快烂\n\n游戏服务器发送端功能：\n\n计算排行榜\n\n序列化\n\n网络发送\n\n广播数据\n\n游戏客户端功能\n\n接收所有广播\n\n反序列化\n\n解析数据\n\n设计任务\n\n1. 传输协议设计\n\n数据格式设计\n\n排行榜在网络传输中应该是用什么样的二进制文本 具体的字节布局和格式规范\n\n发送端的处理流程 如何将内存中的数据结构转换成层网络传输的格式」一批数据多个房间该如何组织\n\n1. 说明基础设计场下会遇到什么问题？需要做哪些设计来调整\n\n3.交付要求\n\n系统架构图\n\n数据格式图示\n\n处理流程图\n\n关键设计决策说明\n\n多态失效的原因是：\n\nA compute 没有正确 override\n\nB std::vector<strategy> 存储基类值 push_back 派生类被切片 object slicing 只保留基类部分 factor_ 被丢弃\n\nC 虚函数声明错误\n\nD const 修饰符导致无法调用需函数\n\ntemplate<typename... Ts>\n\nsum(Ts ... args) {return (args + ...)l}\n\nsum(std::string(\"hello\") \"\" ,\"world\") 使用右折叠(args + ...) 的结果是\n\nA 输出 helloworld\n\nB 编译错误因为右折叠展开为 string(\"hello\") + (\"\" + \"wolrd\") 而 +“world” 是两个 const char*想家 指针假发 ill-formed\n\nC 输出 hello world\n\nD 运行时错误\n\n```cpp\nclass Monitor {\nthread workder_;\natomic<bool> runing_ {false};\n\npublic:\nvoid start(){\nruning_ = true;\nworker_ = stdLLthread([this]) {\nWhile(runing.load()) {\nthis_thread::sleep_for(chrono::seconds(1))\nstop() //（1）\n\nvoid stop(){}\n runing = false\nif(worker.joinable())\nworker.join() // （2）\n}}\n~Monitor{stop()l}\n\n}\n\n如果工作线程调用 stop()(1)(2)处 join() 会发生什么\n\n};\n```\n\n我该如何对这 5 个任务进行优先级排序，哪些任务自己会处理，哪些可以协调其他人参与，如何协调。录尚书任务重，受到监控告警 内存 95% 超市报错，影响到下有多个依赖房，我该如何调整工作，第一步是什么？\n\n内存告警的处理思路\n\n故障恢复，如何避免问题再次发生？\n\n1. 生产环境某策略信号计算延迟，已影响到交易需排查\n2. Hr 通知今天下午有一场候选人的技术面试，需要我做为面试官参加\n3. Leader 要求今天完成仪表盘上的上线部署\n4. CI/CD 流水线报错 开发团队无法正常提交代码\n5. 一份技术方案需要在本周内完成\n\n选择 & 填空题\n\n在局域网内某台主机用 ping 命令测试网络连接时 发现网络内部的主机都可以连通，而不能与公网联通 可能问题是局域网 DNS 设置有无 局域网网关和主机的网关设置有无 没有设计局域网的网关 主机 ip 设置有误\n\n用户态切换到内核态的操作 int/0 sin 函数调用 read 系统调用 哪几个选项\n\n3 个并发 同类资源 4 个 系统不会发生死锁的最少资源数是？\n\nd = {} d[[1,2]] = \"hello\" print(d) 输出的是？\n\nlinux 信号不能被进程捕获的是 ？\n\nstruct A{int a union {long b; short c}}; struct B { char e; struct A d; int f}; sizeof(struct B) 大小为\n\nnumpy 那种操作一定会产生 copy\n\nb = a[a > 0] b = a[:] c = a.vew() b = a.reshape(2, 3)\n\nC 那个阶段可以发现被调用的函数为定义 链接 编译执行 预处理？\n\n进程状态转换的描述 不可能发生的事 堵塞->就绪 运行 ->堵塞 堵塞->运行 就绪->运行？\n\n4 台打印机 每个需要独占 2 台打印机，则该系统最多同时执行多少作业不会发生死锁\n\ntcp 套接字 那个不会发生堵塞？\n\nN 条长度为 M 的有序链表合并 合并之后也保持有序 则时间复杂度为\n\nawk 读取 log 文件抽取字段到 csv中 命令运行期间 使用 rm 删除 log 文件 会发生什么？\n\n软连接和原文件共享相同 inode 硬链接和源文件共享同样的 inode 删除源文件后 软连接让然有效 赢链接可以夸文件系统 那个说法正确？\n\nNumpy广播机制核心匹配规则是？\n\n运行结果 x = 1 def change(a) x += 1 print(x) change(x)\n\nnumpy memap 创建映射文件，映射文件不支持下标随机访问，多个进程可以同时以只读方式映射同一个文件 内存映射的大小不能超过物理内存容量，数据会被一次性加载到物理内存中 \n\n引用必须初始化 指针不必 不存在指向空值的引用，但存在指向空值的指针\n\n引用初始化之后不能被改变，指针可以改变所指的的对象，引用传值 指针传地址\n\n一个线程可以创建撤销另一个线程 一个程序至少有一个进程，一个进程至少有一个线程 这个说法对吗？\n\n线程自己不拥有系统资源，操作系统最小的调度单位是进程？\n\n构造方法没有返回类型吗？构造方法一定是 public 的吗？构造方法可以重载吗？\n\n不同的线程共享相同的栈空间，线程比进程的并发度更高吗？\n\nC++ 虚函数可以被内联吗？模版可以定义成虚函数吗？虚函数 和 模版的区别就是一个是运行时的多态 一个是编译期的多态是吗？"
+      }
+    ],
+    "stage": "OA"
   }
 ];

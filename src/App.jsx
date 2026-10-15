@@ -6,10 +6,66 @@ import {
 } from "@phosphor-icons/react";
 import { questions } from "./questions.js";
 import { companyExperiences } from "./companyExperiences.js";
+import { getItemYear, getItemMonth, getDateSortKey, getExperienceStage, groupExperiences } from "./experienceNavigation.js";
 
 const STATUS_LABELS = { mastered: "已掌握", fuzzy: "模糊", pending: "未掌握" };
 const STATUS_ORDER = { mastered: 0, fuzzy: 1, pending: 2 };
 const REVIEW_QUESTIONS = questions.filter((item) => item.trackProgress !== false);
+
+function QuestionSolution({ question }) {
+  if (!question.solution) return null;
+  return (
+    <details className="question-solution" open={question.solutionExpanded || undefined}>
+      <summary>解题思路与参考解法<span>补充解析</span></summary>
+      <div>
+        {question.solution.map((block, i) => (
+          <div className="solution-block" key={i}>
+            <h3>{block.title}</h3>
+            {block.paragraphs?.map((text, j) => <p key={j}>{text}</p>)}
+            {block.bullets && <ul>{block.bullets.map((text, j) => <li key={j}>{text}</li>)}</ul>}
+            {block.code && <pre><code>{block.code}</code></pre>}
+            {block.links && <div className="solution-links">{block.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noreferrer">{link.label}<CaretRight size={13} /></a>)}</div>}
+          </div>
+        ))}
+      </div>
+    </details>
+  );
+}
+
+const OA_TYPES = ["算法", "选择", "填空", "设计题", "综合与简答", "原稿与说明"];
+
+function getQuestionType(section, question) {
+  if (question?.navigationType) return question.navigationType;
+  if (/原稿|来源|核对说明/.test(section.title)) return "原稿与说明";
+  if (/算法|编程|ACM/i.test(section.title)) return "算法";
+  if (/系统设计|设计题|架构设计/.test(section.title)) return "设计题";
+  if (question?.options?.length || /选择/.test(section.title) && !/填空/.test(section.title)) return "选择";
+  if (/填空/.test(section.title) && !/选择/.test(section.title)) return "填空";
+  return "综合与简答";
+}
+
+function ExperienceContents({ item }) {
+  const isOa = getExperienceStage(item) === "OA";
+  const entries = item.sections.flatMap((section, sectionIndex) =>
+    isOa && section.questions?.length ? section.questions.map((question, questionIndex) => ({
+      type: getQuestionType(section, question), label: question.prompt,
+      target: `question-${sectionIndex}-${questionIndex}`
+    })) : [{ type: getQuestionType(section), label: section.title, target: `section-${sectionIndex}` }]
+  );
+  return <>
+    <div className="session-head contents-head"><p>{isOa ? "题型导航" : "本场内容"}</p><span>{item.company} · {getExperienceStage(item)}</span></div>
+    <nav className="contents-navigation" aria-label={isOa ? "OA 题型导航" : "本场内容导航"}>
+      {isOa ? OA_TYPES.map(type => {
+        const matches = entries.filter(entry => entry.type === type);
+        if (!matches.length && !OA_TYPES.slice(0, 4).includes(type)) return null;
+        return <details key={type} className="contents-category" open={type === "算法" && matches.length > 0}>
+          <summary><span>{type}</span><small>{matches.length ? `${matches.length} 项` : "暂无题目"}</small></summary>
+          {matches.map((entry, index) => <a key={entry.target} href={`#${entry.target}`}><span>{String(index + 1).padStart(2, "0")}</span><span>{entry.label}</span></a>)}
+        </details>;
+      }) : entries.map(entry => <a className="section-anchor" key={entry.target} href={`#${entry.target}`}>{entry.label}</a>)}
+    </nav>
+  </>;
+}
 
 function SourceGallery({ images }) {
   const [index, setIndex] = useState(() => Math.max(0, images.findIndex((image) => image.cover)));
@@ -32,23 +88,6 @@ function SourceGallery({ images }) {
   );
 }
 
-function getItemYear(item) {
-  return String(item.date || "").match(/\d{4}/)?.[0] || "未标注年份";
-}
-
-function getItemMonth(item) {
-  const match = String(item.date || "").match(/^\d{4}[-/.](\d{1,2})/);
-  return match ? `${match[1].padStart(2, "0")} 月` : "月份待补充";
-}
-
-function getDateSortKey(item) {
-  const date = String(item.date || "");
-  const fullDate = date.match(/^(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})/);
-  if (fullDate) return `${fullDate[1]}-${fullDate[2].padStart(2, "0")}-${fullDate[3].padStart(2, "0")}`;
-  const yearOnly = date.match(/\d{4}/)?.[0];
-  return yearOnly ? `${yearOnly}-00-00` : "0000-00-00";
-}
-
 function readSavedState() {
   try {
     return JSON.parse(localStorage.getItem("interview-review-state")) || {};
@@ -69,7 +108,8 @@ export function App() {
   const [currentId, setCurrentId] = useState(() => localStorage.getItem("interview-current") || questions[0].id);
   const [category, setCategory] = useState("全部");
   const [company, setCompany] = useState("全部公司");
-  const [interviewType, setInterviewType] = useState("全部类型");
+  const [stage, setStage] = useState("全部轮次");
+  const [expandedCompany, setExpandedCompany] = useState(null);
   const [year, setYear] = useState("全部年份");
   const [month, setMonth] = useState("全部月份");
   const [expandedYear, setExpandedYear] = useState(null);
@@ -84,29 +124,36 @@ export function App() {
     return questions;
   }, [mode]);
   const categories = useMemo(() => [...new Set(questions.map((item) => item.category))], []);
-  const companies = useMemo(() => [...new Set(sourceItems.map((item) => item.company))], [sourceItems]);
-  const types = useMemo(() => [...new Set(sourceItems.map((item) => item.type))], [sourceItems]);
-  const experienceYears = useMemo(() => [...new Set(companyExperiences.map(getItemYear))].sort((a, b) => b.localeCompare(a, "zh-CN")), []);
-  const filtered = useMemo(() => {
+
+  const experienceYears = useMemo(() => [...new Set(companyExperiences.map(getItemYear))].sort((a, b) => a === "未标注年份" ? 1 : b === "未标注年份" ? -1 : b.localeCompare(a, "zh-CN")), []);
+  const scopedItems = useMemo(() => {
     const normalized = query.trim().toLowerCase();
     return sourceItems.filter((item) => {
       const matchesCategory = mode === "experiences" || category === "全部" || item.category === category;
-      const matchesCompany = company === "全部公司" || item.company === company;
-      const matchesType = interviewType === "全部类型" || item.type === interviewType;
       const matchesYear = mode !== "experiences" || year === "全部年份" || getItemYear(item) === year;
       const matchesMonth = mode !== "experiences" || month === "全部月份" || getItemMonth(item) === month;
       const sectionText = item.sections.flatMap((section) => [
         section.title,
         section.transcript || "",
+        section.sourceTranscript || "",
         ...(section.paragraphs || []),
         ...(section.bullets || []),
-        ...(section.questions || []).flatMap((question) => [question.prompt, question.code || "", question.note || "", ...(question.options || [])]),
+        ...(section.questions || []).flatMap((question) => [question.prompt, question.code || "", question.note || "", ...(question.options || []), ...(question.solution || []).flatMap(block => [block.title, ...(block.paragraphs || []), ...(block.bullets || []), block.code || ""])]),
         ...(section.codeBlocks || []).flatMap((block) => [block.label, block.code])
       ]);
       const haystack = [item.title, item.topic || "", item.company, ...item.tags, ...sectionText].join(" ").toLowerCase();
-      return matchesCategory && matchesCompany && matchesType && matchesYear && matchesMonth && (!normalized || haystack.includes(normalized));
+      return matchesCategory && matchesYear && matchesMonth && (!normalized || haystack.includes(normalized));
     });
-  }, [sourceItems, mode, category, company, interviewType, year, month, query]);
+  }, [sourceItems, mode, category, year, month, query]);
+  const companies = useMemo(() => [...new Set(scopedItems.map((item) => item.company))], [scopedItems]);
+  const companyFolders = useMemo(() => groupExperiences(scopedItems), [scopedItems]);
+  const filtered = useMemo(() => {
+    const matches = scopedItems.filter(item =>
+      (company === "全部公司" || item.company === company) &&
+      (mode !== "experiences" || stage === "全部轮次" || getExperienceStage(item) === stage)
+    );
+    return mode === "experiences" ? groupExperiences(matches).flatMap(group => group.stages.flatMap(folder => folder.items)) : matches;
+  }, [scopedItems, company, mode, stage]);
 
   const selected = sourceItems.find((item) => item.id === currentId);
   const current = filtered.find((item) => item.id === currentId) || filtered[0] || selected || sourceItems[0];
@@ -128,23 +175,17 @@ export function App() {
     setSidebarOpen(false);
   }
 
-  function go(direction) {
-    if (!filtered.length) return;
-    const safeIndex = currentIndex < 0 ? 0 : currentIndex;
-    const nextIndex = (safeIndex + direction + filtered.length) % filtered.length;
-    selectQuestion(filtered[nextIndex].id);
-  }
-
   function switchMode(nextMode) {
     setMode(nextMode);
     setCategory("全部");
     setCompany("全部公司");
-    setInterviewType("全部类型");
+    setStage("全部轮次");
+    setExpandedCompany(null);
     setYear("全部年份");
     setMonth("全部月份");
     setExpandedYear(null);
     setQuery("");
-    const nextItems = nextMode === "experiences" ? companyExperiences : nextMode === "review" ? REVIEW_QUESTIONS : questions;
+    const nextItems = nextMode === "experiences" ? [...companyExperiences].sort((a, b) => getDateSortKey(b).localeCompare(getDateSortKey(a))) : nextMode === "review" ? REVIEW_QUESTIONS : questions;
     selectQuestion(nextItems[0].id);
   }
 
@@ -165,8 +206,6 @@ export function App() {
         searchRef.current?.focus();
       }
       if (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement) return;
-      if (event.key.toLowerCase() === "j" || event.key === "ArrowRight") go(1);
-      if (event.key.toLowerCase() === "k" || event.key === "ArrowLeft") go(-1);
       if (mode === "review" && event.key === "1") updateState({ status: "fuzzy" });
       if (mode === "review" && event.key === "2") updateState({ status: "mastered" });
       if (mode === "review" && event.key === "\\") setAnswerVisible((value) => !value);
@@ -174,6 +213,22 @@ export function App() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   });
+
+  function chooseArchive(nextYear, nextMonth = "全部月份") {
+    setYear(nextYear);
+    setMonth(nextMonth);
+    setCompany("全部公司");
+    setStage("全部轮次");
+    setExpandedCompany(null);
+  }
+
+  function chooseStage(nextCompany, nextStage) {
+    setCompany(nextCompany);
+    setStage(nextStage);
+    const match = scopedItems.find(item => item.company === nextCompany &&
+      (nextStage === "全部轮次" || getExperienceStage(item) === nextStage));
+    if (match) selectQuestion(match.id);
+  }
 
   function chooseCategory(next) {
     setCategory(next);
@@ -231,7 +286,7 @@ export function App() {
         {mode === "experiences" && (
           <div className="side-section year-archive">
             <p className="side-label">年份归档</p>
-            <button className={`side-item ${year === "全部年份" ? "active" : ""}`} onClick={() => { setYear("全部年份"); setMonth("全部月份"); setExpandedYear(null); }}>
+            <button className={`side-item ${year === "全部年份" ? "active" : ""}`} onClick={() => { chooseArchive("全部年份"); setExpandedYear(null); }}>
               <Stack size={20} /><span>全部年份</span><small>{companyExperiences.length}</small>
             </button>
             {experienceYears.map((itemYear) => {
@@ -241,14 +296,14 @@ export function App() {
               const isExpanded = expandedYear === itemYear;
               return (
                 <div className="year-group" key={itemYear}>
-                  <button className={`side-item ${year === itemYear ? "active" : ""}`} aria-expanded={isExpanded} onClick={() => { setYear(itemYear); setMonth("全部月份"); setExpandedYear(isExpanded ? null : itemYear); }}>
+                  <button className={`side-item ${year === itemYear ? "active" : ""}`} aria-expanded={isExpanded} onClick={() => { chooseArchive(itemYear); setExpandedYear(isExpanded ? null : itemYear); }}>
                     <CaretRight className={`archive-caret ${isExpanded ? "expanded" : ""}`} size={16} /><span>{itemYear === "未标注年份" ? itemYear : `${itemYear} 年`}</span><small>{count}</small>
                   </button>
                   {isExpanded && (
                     <div className="month-list">
-                      <button className={`month-item ${month === "全部月份" ? "active" : ""}`} onClick={() => { setYear(itemYear); setMonth("全部月份"); }}><span>全部月份</span><small>{count}</small></button>
+                      <button className={`month-item ${month === "全部月份" ? "active" : ""}`} onClick={() => { chooseArchive(itemYear); }}><span>全部月份</span><small>{count}</small></button>
                       {months.map((itemMonth) => (
-                        <button key={itemMonth} className={`month-item ${month === itemMonth ? "active" : ""}`} onClick={() => { setYear(itemYear); setMonth(itemMonth); }}>
+                        <button key={itemMonth} className={`month-item ${month === itemMonth ? "active" : ""}`} onClick={() => { chooseArchive(itemYear, itemMonth); }}>
                           <span>{itemMonth}</span><small>{yearItems.filter((item) => getItemMonth(item) === itemMonth).length}</small>
                         </button>
                       ))}
@@ -260,25 +315,43 @@ export function App() {
           </div>
         )}
 
-        <div className="side-section companies">
-          <div className="side-label-row"><p className="side-label">公司与类型</p><span>筛选</span></div>
-          <label className="company-select">
-            <BookmarkSimple size={20} />
-            <select value={company} onChange={(event) => setCompany(event.target.value)}>
-              <option>全部公司</option>
-              {companies.map((item) => <option key={item}>{item}</option>)}
-            </select>
-            <CaretRight size={16} />
-          </label>
-          <label className="company-select">
-            <NotePencil size={20} />
-            <select value={interviewType} onChange={(event) => setInterviewType(event.target.value)}>
-              <option>全部类型</option>
-              {types.map((item) => <option key={item}>{item}</option>)}
-            </select>
-            <CaretRight size={16} />
-          </label>
-        </div>
+        {mode === "experiences" ? (
+          <nav className="side-section company-folders" aria-label="公司与轮次归档">
+            <p className="side-label">公司归档</p>
+            <button className={`side-item ${company === "全部公司" ? "active" : ""}`} onClick={() => { setCompany("全部公司"); setStage("全部轮次"); setExpandedCompany(null); }}>
+              <UsersThree size={20} /><span>全部公司</span><small>{scopedItems.length}</small>
+            </button>
+            {companyFolders.map(folder => {
+              const isExpanded = expandedCompany === folder.company;
+              const count = folder.stages.reduce((sum, group) => sum + group.items.length, 0);
+              return <div key={folder.company}>
+                <button className={`side-item company-folder ${company === folder.company ? "active" : ""}`} aria-expanded={isExpanded} onClick={() => {
+                  setExpandedCompany(isExpanded ? null : folder.company);
+                  setCompany(folder.company);
+                  setStage("全部轮次");
+                }}>
+                  <CaretRight className={`archive-caret ${isExpanded ? "expanded" : ""}`} size={16} /><span>{folder.company}</span><small>{count}</small>
+                </button>
+                {isExpanded && <div className="month-list round-list">
+                  {folder.stages.map(group => <button key={group.label} className={`month-item ${stage === group.label ? "active" : ""}`} aria-pressed={company === folder.company && stage === group.label} onClick={() => chooseStage(folder.company, group.label)}><span>{group.label}</span><small>{group.items.length}</small></button>)}
+                </div>}
+              </div>;
+            })}
+            {!companyFolders.length && <p className="folder-empty">当前月份没有匹配的公司</p>}
+          </nav>
+        ) : (
+          <div className="side-section companies">
+            <p className="side-label">公司</p>
+            <label className="company-select">
+              <BookmarkSimple size={20} />
+              <select aria-label="公司" value={company} onChange={(event) => setCompany(event.target.value)}>
+                <option>全部公司</option>
+                {companies.map((item) => <option key={item}>{item}</option>)}
+              </select>
+              <CaretRight size={16} />
+            </label>
+          </div>
+        )}
 
         <div className="sidebar-footer">
           {mode === "review" ? (
@@ -287,7 +360,7 @@ export function App() {
                 <Brain size={20} />
                 <div><span>专项复习进度</span><strong>{masteredCount} / {trackedQuestions.length} 已掌握</strong></div>
               </div>
-              <button className="side-item subtle"><Command size={20} /><span>快捷键</span><small>1 / 2 / J / K</small></button>
+              <button className="side-item subtle"><Command size={20} /><span>快捷键</span><small>1 / 2</small></button>
             </>
           ) : <p className="browse-note">只读浏览 · 内容由本地文件维护</p>}
         </div>
@@ -297,7 +370,7 @@ export function App() {
         <header className="reader-toolbar">
           <div className="breadcrumb">
             <span>{mode === "experiences" ? "完整面经" : current.topic}</span><i>·</i>
-            {(mode === "experiences" ? [current.company, current.type] : current.tags).map((tag) => <span key={tag}>{tag}</span>)}
+            {(mode === "experiences" ? [current.company, getExperienceStage(current)] : current.tags).map((tag) => <span key={tag}>{tag}</span>)}
           </div>
           {mode !== "knowledge" && <div className="toolbar-actions">
             <button className={currentState.favorite ? "selected" : ""} onClick={() => updateState({ favorite: !currentState.favorite })}>
@@ -328,20 +401,23 @@ export function App() {
             </button>
           )}
 
+          {mode === "experiences" && <div className="mobile-contents"><details><summary>浏览{getExperienceStage(current) === "OA" ? "题型" : "本场内容"}</summary><ExperienceContents key={current.id} item={current} /></details></div>}
+
           {mode !== "review" || answerVisible ? (
             <div className="answer-content">
               {current.sections.map((section, sectionIndex) => (
-                <section key={`${current.id}-${sectionIndex}`} className="answer-section">
+                <section id={`section-${sectionIndex}`} key={`${current.id}-${sectionIndex}`} className="answer-section">
                   <h2><span />{section.title}</h2>
                   {section.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   {section.highlight && <blockquote>{section.highlight}</blockquote>}
                   {section.transcript && <pre className="source-transcript">{section.transcript}</pre>}
+                  {section.sourceTranscript && <details className="original-source"><summary>展开原始笔试记录（含未校正代码）</summary><pre className="source-transcript">{section.sourceTranscript}</pre></details>}
                   {section.images && <SourceGallery key={`${current.id}-${sectionIndex}`} images={section.images} />}
                   {section.bullets && <ol className={sectionIndex === current.sections.length - 1 ? "questions-list" : ""}>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ol>}
                   {section.questions && (
                     <ol className="exam-questions">
                       {section.questions.map((question, questionIndex) => (
-                        <li key={`${sectionIndex}-${questionIndex}`} value={question.number}>
+                        <li id={`question-${sectionIndex}-${questionIndex}`} key={`${sectionIndex}-${questionIndex}`} value={question.number}>
                           <strong>{question.prompt}</strong>
                           {question.code && <pre><code>{question.code}</code></pre>}
                           {question.options && (
@@ -350,6 +426,7 @@ export function App() {
                             </div>
                           )}
                           {question.note && <p className="transcription-note"><span>转写备注</span>{question.note}</p>}
+                          <QuestionSolution question={question} />
                           {question.sourceReferences && <details className="question-provenance">
                             <summary>原始资料 · {question.sourceReferences.length} 个记录</summary>
                             <p>{question.sourceReferences.join(" · ")}</p>
@@ -377,40 +454,27 @@ export function App() {
           )}
         </article>
 
-        <footer className={`answer-actions ${mode !== "review" ? "browse-actions" : ""}`}>
-          <button className="nav-action" onClick={() => go(-1)}><ArrowLeft size={21} /><span>{mode === "review" ? "上一题" : "上一篇"}</span><kbd>K</kbd></button>
+        {mode === "review" && <footer className="answer-actions">
           {mode === "review" && <button className={`state-action fuzzy ${currentState.status === "fuzzy" ? "active" : ""}`} onClick={() => updateState({ status: "fuzzy" })}><span className="status-dot" />模糊<kbd>1</kbd></button>}
           {mode === "review" && <button className={`state-action mastered ${currentState.status === "mastered" ? "active" : ""}`} onClick={() => updateState({ status: "mastered" })}><CheckCircle size={20} weight={currentState.status === "mastered" ? "fill" : "regular"} />已掌握<kbd>2</kbd></button>}
-          <button className="nav-action next" onClick={() => go(1)}><span>{mode === "review" ? "下一题" : "下一篇"}</span><ArrowRight size={21} /><kbd>J</kbd></button>
-        </footer>
+        </footer>}
       </main>
 
       <aside className="session-panel">
-        <div className="session-head">
-          <div><p>{mode === "experiences" ? "面经目录" : mode === "review" ? "复习队列" : "知识目录"}</p><strong>{Math.max(1, currentIndex + 1)} <span>/ {filtered.length || sourceItems.length}</span></strong></div>
-          {mode !== "knowledge" && <div className="progress-track"><span style={{ width: `${((Math.max(0, currentIndex) + 1) / Math.max(1, filtered.length)) * 100}%` }} /></div>}
-        </div>
-
-        <div className={`session-list ${mode === "experiences" ? "experience-list" : ""}`}>
-          {filtered.length ? filtered.map((item, index) => {
-            const itemState = saved[item.id]?.status || "pending";
-            const itemYear = getItemYear(item);
-            const itemMonth = getItemMonth(item);
-            const showYear = mode === "experiences" && (index === 0 || getItemYear(filtered[index - 1]) !== itemYear);
-            const showMonth = mode === "experiences" && (index === 0 || showYear || getItemMonth(filtered[index - 1]) !== itemMonth);
-            return (
-              <React.Fragment key={item.id}>
-                {showYear && <p className="year-divider"><span>{itemYear === "未标注年份" ? itemYear : `${itemYear} 年`}</span><small>{filtered.filter((entry) => getItemYear(entry) === itemYear).length} 篇</small></p>}
-                {showMonth && <p className="month-divider">{itemMonth}</p>}
-                <button className={item.id === current.id ? "current" : ""} onClick={() => selectQuestion(item.id)}>
-                  <span className="question-number">{index + 1}</span>
-                  <span className="question-title">{item.title}</span>
-                  {mode === "review" && <span className={`queue-status ${itemState}`} title={STATUS_LABELS[itemState]} />}
-                </button>
-              </React.Fragment>
-            );
-          }) : <div className="empty-state"><MagnifyingGlass size={26} /><strong>没有匹配的内容</strong><span>试试更换搜索词或筛选条件。</span></div>}
-        </div>
+        {mode === "experiences" ? <ExperienceContents key={current.id} item={current} /> : <>
+          <div className="session-head">
+            <div><p>{mode === "review" ? "复习队列" : "知识目录"}</p><strong>{Math.max(1, currentIndex + 1)} <span>/ {filtered.length}</span></strong></div>
+          </div>
+          <div className="session-list">
+            {filtered.length ? filtered.map((item, index) => (
+              <button key={item.id} className={item.id === current.id ? "current" : ""} onClick={() => selectQuestion(item.id)}>
+                <span className="question-number">{index + 1}</span>
+                <span className="question-title">{item.title}</span>
+                {mode === "review" && <span className={`queue-status ${saved[item.id]?.status || "pending"}`} title={STATUS_LABELS[saved[item.id]?.status || "pending"]} />}
+              </button>
+            )) : <div className="empty-state"><MagnifyingGlass size={26} /><strong>没有匹配的内容</strong><span>试试更换搜索词或文件夹。</span></div>}
+          </div>
+        </>}
 
         <div className="session-footer">
           {mode === "review" ? (
