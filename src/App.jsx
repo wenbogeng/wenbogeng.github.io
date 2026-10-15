@@ -6,7 +6,9 @@ import {
 } from "@phosphor-icons/react";
 import { questions } from "./questions.js";
 import { companyExperiences } from "./companyExperiences.js";
-import { getItemYear, getItemMonth, getDateSortKey, getExperienceStage, groupExperiences } from "./experienceNavigation.js";
+import { getItemYear, getItemMonth, getDateSortKey, getExperienceStage, groupExperiences, getExperienceOrigin, ORIGIN_LABELS } from "./experienceNavigation.js";
+
+import { groupCompanyDirectory } from "./companyDirectory.js";
 
 const STATUS_LABELS = { mastered: "已掌握", fuzzy: "模糊", pending: "未掌握" };
 const STATUS_ORDER = { mastered: 0, fuzzy: 1, pending: 2 };
@@ -146,7 +148,8 @@ export function App() {
     });
   }, [sourceItems, mode, category, year, month, query]);
   const companies = useMemo(() => [...new Set(scopedItems.map((item) => item.company))], [scopedItems]);
-  const companyFolders = useMemo(() => groupExperiences(scopedItems), [scopedItems]);
+  const companyFolders = useMemo(() => groupExperiences(scopedItems.filter(item => getExperienceOrigin(item) !== "collected")), [scopedItems]);
+  const collectedFolders = useMemo(() => groupExperiences(scopedItems.filter(item => getExperienceOrigin(item) === "collected")), [scopedItems]);
   const filtered = useMemo(() => {
     const matches = scopedItems.filter(item =>
       (company === "全部公司" || item.company === company) &&
@@ -222,12 +225,37 @@ export function App() {
     setExpandedCompany(null);
   }
 
-  function chooseStage(nextCompany, nextStage) {
-    setCompany(nextCompany);
-    setStage(nextStage);
-    const match = scopedItems.find(item => item.company === nextCompany &&
-      (nextStage === "全部轮次" || getExperienceStage(item) === nextStage));
-    if (match) selectQuestion(match.id);
+  function renderCompanyDirectory(folders, originGroup) {
+    return groupCompanyDirectory(folders).map(group => <details className="industry-group" key={group.label} open={group.label !== "其他／未明确" || query.trim() ? true : undefined}>
+      <summary><span>{group.label}</span><small>{group.folders.length} 家</small></summary>
+      {renderCompanyFolders(group.folders, originGroup)}
+    </details>);
+  }
+
+  function renderCompanyFolders(folders, originGroup) {
+    return folders.map(folder => {
+      const folderKey = `${originGroup}:${folder.company}`;
+      const isExpanded = expandedCompany === folderKey;
+      const entries = folder.stages.flatMap(group => group.items);
+      return <div key={folderKey}>
+        <button className={`side-item company-folder ${entries.some(item => item.id === current.id) ? "active" : ""}`} aria-expanded={isExpanded} onClick={() => {
+          setExpandedCompany(isExpanded ? null : folderKey);
+          setCompany(folder.company);
+          setStage("全部轮次");
+          setCurrentId(entries[0].id);
+          setAnswerVisible(true);
+          if (entries.length === 1) setSidebarOpen(false);
+        }}>
+          <CaretRight className={`archive-caret ${isExpanded ? "expanded" : ""}`} size={16} /><span>{folder.company}</span><small>{entries.length}</small>
+        </button>
+        {isExpanded && <div className="month-list round-list">
+          {folder.stages.map(group => <div key={group.label}>
+            <button className={`month-item ${group.items.some(item => item.id === current.id) ? "active" : ""}`} aria-pressed={group.items.some(item => item.id === current.id)} onClick={() => { setCompany(folder.company); setStage(group.label); selectQuestion(group.items[0].id); }}><span>{group.label}</span><small>{group.items.length}</small></button>
+            {group.items.length > 1 && group.items.map(item => <button className={`month-item session-entry ${current.id === item.id ? "active" : ""}`} key={item.id} onClick={() => { setCompany(folder.company); setStage(group.label); selectQuestion(item.id); }}><span>{item.title}</span></button>)}
+          </div>)}
+        </div>}
+      </div>;
+    });
   }
 
   function chooseCategory(next) {
@@ -283,9 +311,34 @@ export function App() {
           })}
         </div>
 
+        {mode === "experiences" ? (
+          <nav className="side-section company-folders" aria-label="公司与轮次归档">
+            <p className="side-label">公司归档</p>
+            <p className="company-nav-note">按 A–Z 排序 · 中文按拼音</p>
+            {renderCompanyDirectory(companyFolders, "records")}
+            {!!collectedFolders.length && <details className="collected-folders" open={query.trim() ? true : undefined}>
+              <summary>收集面经 <small>{scopedItems.filter(item => getExperienceOrigin(item) === "collected").length}</small></summary>
+              <p className="company-nav-note">来自他人汇编，非本人亲历</p>
+              {renderCompanyDirectory(collectedFolders, "collected")}
+            </details>}
+            {!companyFolders.length && !collectedFolders.length && <p className="folder-empty">没有匹配的公司</p>}
+          </nav>
+        ) : (
+          <div className="side-section companies">
+            <p className="side-label">公司</p>
+            <label className="company-select">
+              <BookmarkSimple size={20} />
+              <select aria-label="公司" value={company} onChange={(event) => setCompany(event.target.value)}>
+                <option>全部公司</option>
+                {companies.map((item) => <option key={item}>{item}</option>)}
+              </select>
+              <CaretRight size={16} />
+            </label>
+          </div>
+        )}
+
         {mode === "experiences" && (
-          <div className="side-section year-archive">
-            <p className="side-label">年份归档</p>
+          <details className="side-section year-archive"><summary className="side-label">按时间查看</summary>
             <button className={`side-item ${year === "全部年份" ? "active" : ""}`} onClick={() => { chooseArchive("全部年份"); setExpandedYear(null); }}>
               <Stack size={20} /><span>全部年份</span><small>{companyExperiences.length}</small>
             </button>
@@ -312,46 +365,9 @@ export function App() {
                 </div>
               );
             })}
-          </div>
+          </details>
         )}
 
-        {mode === "experiences" ? (
-          <nav className="side-section company-folders" aria-label="公司与轮次归档">
-            <p className="side-label">公司归档</p>
-            <button className={`side-item ${company === "全部公司" ? "active" : ""}`} onClick={() => { setCompany("全部公司"); setStage("全部轮次"); setExpandedCompany(null); }}>
-              <UsersThree size={20} /><span>全部公司</span><small>{scopedItems.length}</small>
-            </button>
-            {companyFolders.map(folder => {
-              const isExpanded = expandedCompany === folder.company;
-              const count = folder.stages.reduce((sum, group) => sum + group.items.length, 0);
-              return <div key={folder.company}>
-                <button className={`side-item company-folder ${company === folder.company ? "active" : ""}`} aria-expanded={isExpanded} onClick={() => {
-                  setExpandedCompany(isExpanded ? null : folder.company);
-                  setCompany(folder.company);
-                  setStage("全部轮次");
-                }}>
-                  <CaretRight className={`archive-caret ${isExpanded ? "expanded" : ""}`} size={16} /><span>{folder.company}</span><small>{count}</small>
-                </button>
-                {isExpanded && <div className="month-list round-list">
-                  {folder.stages.map(group => <button key={group.label} className={`month-item ${stage === group.label ? "active" : ""}`} aria-pressed={company === folder.company && stage === group.label} onClick={() => chooseStage(folder.company, group.label)}><span>{group.label}</span><small>{group.items.length}</small></button>)}
-                </div>}
-              </div>;
-            })}
-            {!companyFolders.length && <p className="folder-empty">当前月份没有匹配的公司</p>}
-          </nav>
-        ) : (
-          <div className="side-section companies">
-            <p className="side-label">公司</p>
-            <label className="company-select">
-              <BookmarkSimple size={20} />
-              <select aria-label="公司" value={company} onChange={(event) => setCompany(event.target.value)}>
-                <option>全部公司</option>
-                {companies.map((item) => <option key={item}>{item}</option>)}
-              </select>
-              <CaretRight size={16} />
-            </label>
-          </div>
-        )}
 
         <div className="sidebar-footer">
           {mode === "review" ? (
@@ -387,6 +403,7 @@ export function App() {
             </time>
             {current.duration && <><i>·</i><span>{current.duration}</span></>}
           </div>
+          {mode === "experiences" && ORIGIN_LABELS[getExperienceOrigin(current)] && <p className={`origin-badge origin-${getExperienceOrigin(current)}`}>{ORIGIN_LABELS[getExperienceOrigin(current)]}</p>}
           <h1>{current.title}</h1>
           <p className="summary">{current.summary}</p>
           {current.context && <p className="experience-context"><strong>场次备注</strong>{current.context}</p>}

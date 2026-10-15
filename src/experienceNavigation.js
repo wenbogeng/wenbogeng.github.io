@@ -27,16 +27,16 @@ export function getExperienceStage(item) {
   const match = round.match(/(?:第)?([一二三四五六七八九十]|\d+)\s*(?:轮|面)/) || round.match(/\b(?:VO|Round)\s*(\d+)\b/i);
   if (match) {
     const label = numbers[Number(match[1])] || match[1];
-    return `${label}轮 VO`;
+    return `${label}面`;
   }
   if (/电话|phone/i.test(round)) return "电话沟通";
-  return "VO · 轮次待补充";
+  return "VO";
 }
 
 export function compareStages(a, b) {
   function rank(label) {
     if (label === "OA") return 0;
-    const match = label.match(/^([一二三四五六七八九十]|\d+)轮 VO$/);
+    const match = label.match(/^([一二三四五六七八九十]|\d+)面$/);
     if (match) return Number(match[1]) || numbers.indexOf(match[1]);
     return { 电话沟通: 20, 终面: 30, HR: 40, 完整流程: 50 }[label] ?? 60;
   }
@@ -59,3 +59,16 @@ export function groupExperiences(items) {
     }))
   }));
 }
+
+export function getExperienceOrigin(item) {
+  if (item.origin) return item.origin;
+  if (item.id === "wanyan-written-recollection") return "personal";
+  if (item.id.startsWith("collected-interview-xls-")) return "collected";
+  return "unconfirmed";
+}
+
+export const ORIGIN_LABELS = {
+  personal: "本人亲历",
+  collected: "收集面经 · 非本人亲历",
+  unconfirmed: ""
+};
